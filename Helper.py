@@ -6,18 +6,17 @@ from nltk.tag.stanford import StanfordPOSTagger
 from nltk.tag import StanfordNERTagger
 from nltk.parse.stanford import StanfordParser
 from nltk.parse.stanford import StanfordDependencyParser
+import os
 
-corpus = []
-doc1 = "I love Chinese food"
-doc2 = "I love American spirits"
-corpus.append(doc1)
-corpus.append(doc2)
 
+posTagger = StanfordPOSTagger('english-bidirectional-distsim.tagger')
+nerTagger = StanfordNERTagger('english.all.3class.distsim.crf.ser.gz')
+parser = StanfordParser(model_path="edu/stanford/nlp/models/lexparser/englishPCFG.ser.gz")
+dep_parser = StanfordDependencyParser(model_path="edu/stanford/nlp/models/lexparser/englishPCFG.ser.gz")
 
 def getTf(word, blob):
     blob = tb(blob.strip())
     return blob.words.count(word) / len(blob.words)
-
 
 def n_containing(word, bloblist):
     return sum(1 for blob in bloblist if word in blob.words)
@@ -30,27 +29,29 @@ def getTfidf(word, blob, bloblist):
     return getTf(word, blob) * getIdf(word, bloblist)
 
 def getPos(line):
-    st = StanfordPOSTagger('english-bidirectional-distsim.tagger')
-    print st.tag('What is the airspeed of an unladen swallow ?'.split())
+    return posTagger.tag(line.split())
 
 def getNER(line):
-    st = StanfordNERTagger('english.all.3class.distsim.crf.ser.gz')
-    print st.tag('Rami Eid is studying at Stony Brook University in NY'.split())
-
+    return nerTagger.tag(line.split())
 
 def getParserTree(line):
-    parser=StanfordParser(model_path="edu/stanford/nlp/models/lexparser/englishPCFG.ser.gz")
-    print list(parser.raw_parse("the quick brown fox jumps over the lazy dog"))
+    return list(parser.raw_parse(line))
 
 def getDependencyTree(line):
-    dep_parser=StanfordDependencyParser(model_path="edu/stanford/nlp/models/lexparser/englishPCFG.ser.gz")
-    print [parse.tree() for parse in dep_parser.raw_parse("The quick brown fox jumps over the lazy dog.")]
+    return [parse.tree() for parse in dep_parser.raw_parse(line)]
 
-print 'tf',getTf('love',doc1)
-print 'idf',getIdf('love', corpus)
-print 'tfidf',getTfidf('love',doc1,corpus)
 
-#getPos(doc1)
-#getNER(doc1)
-getParserTree(doc1)
-#getDependencyTree(doc1)
+# for test purpose
+corpus = []
+doc1 = "the quick brown fox jumps over the lazy dog"
+doc2 = "What is the airspeed of an unladen swallow ?"
+doc3 = "Rami Eid is studying at Stony Brook University in NY"
+corpus.append(doc1)
+corpus.append(doc2)
+print 'tf',getTf('the',doc1)
+print 'idf',getIdf('the', corpus)
+print 'tfidf',getTfidf('the',doc1,corpus)
+print getPos(doc2)
+print getNER(doc3)
+print getParserTree(doc1)
+print getDependencyTree(doc1)

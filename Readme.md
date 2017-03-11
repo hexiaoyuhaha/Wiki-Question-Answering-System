@@ -9,8 +9,8 @@ Helper.py assume you have following packages:
 
 **Some questions for further discussion:**
 - text preprocessing:
-    when do we remove stopwords
-    when do we use lower case
-    when do we use stem word
-    I can create more methods to efficiently deal with preprocessing without n-pass loop:
-      eg. remove stop words and do stemming in one pass; remove stop words before tfidf calculation
+    - when do we remove stopwords
+    - when do we use lower case
+    - when do we use stem word
+    - I can create more methods to efficiently deal with preprocessing without n-pass loop:
+      - eg. remove stop words and do stemming in one pass; remove stop words before tfidf calculation

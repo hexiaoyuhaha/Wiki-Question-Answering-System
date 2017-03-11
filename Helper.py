@@ -68,6 +68,7 @@ def getStemWord(words):
     return [porter.stem(word) for word in words]
 
 # for test purpose
+'''
 corpus = []
 doc1 = "the quick brown fox jumps over the lazy dog"
 doc2 = "What is the airspeed of an unladen swallow ?"
@@ -75,7 +76,7 @@ doc3 = "Rami Eid is studying at Stony Brook University in NY"
 corpus.append(doc1)
 corpus.append(doc2)
 
-'''
+
 print 'tf', getTf('the',doc1)
 print 'idf', getIdf('the', corpus)
 print 'tfidf', getTfidf('the',doc1,corpus)

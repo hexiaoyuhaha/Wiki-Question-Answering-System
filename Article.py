@@ -3,7 +3,7 @@ import nltk.data
 
 
 class Article:
-    """this class stores one document
+    """Article class parse and stores contents of a single html file
 
     Attributes:
         filePath: file path

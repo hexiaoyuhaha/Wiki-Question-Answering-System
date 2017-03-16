@@ -18,18 +18,43 @@ dep_parser = StanfordDependencyParser(model_path="edu/stanford/nlp/models/lexpar
 porter = PorterStemmer()
 
 def getPos(words):
+    '''
+    return part-of-speech tags for words
+    :param words: list of words
+    :return: list of (word, pos_tag) tuple
+    '''
     return posTagger.tag(words)
 
 def getNER(words):
+    '''
+    return name entities tags for words
+    :param words: list of words
+    :return: list of (word, name_entities) tuple
+    '''
     return nerTagger.tag(words)
 
 def getParserTree(line):
+    '''
+    return parse tree of the string
+    :param line: string
+    :return: list of tree nodes
+    '''
     return list(parser.raw_parse(line))
 
 def getDependencyTree(line):
+    '''
+    return dependency parse tree of the string
+    :param line: string
+    :return: list of tree nodes
+    '''
     return [parse.tree() for parse in dep_parser.raw_parse(line)]
 
 def getNouns(words):
+    '''
+    return all nouns in words
+    :param words: list of words
+    :return: list of nouns
+    '''
     tags = getPos(words)
     res = []
     for (k,t) in tags:
@@ -39,6 +64,11 @@ def getNouns(words):
 
 
 def getVerbs(words):
+    '''
+    return all verbs in words
+    :param words: list of words
+    :return: list of verbs
+    '''
     tags = getPos(words)
     res = []
     for (k,t) in tags:
@@ -47,27 +77,70 @@ def getVerbs(words):
     return res
 
 def removeStopWords(words):
+    '''
+    remove stop words in list
+    :param words: list of words
+    :return: list of words
+    '''
     return [word for word in words if word not in stopwords.words('english')]
 
 
 def getStemWord(words):
+    '''
+    return stem words
+    :param words: list of words
+    :return: list of stems
+    '''
     return [porter.stem(word) for word in words]
 
 
 def getTf(word, blob):
+    '''
+    return term frequency for the word in the string
+    :param word: term
+    :param blob: string
+    :return: term frequency
+    '''
     blob = tb(blob.strip())
     return blob.words.count(word)
 
 def getLen(blob):
+    '''
+    return length of the string
+    :param blob: string
+    :return: length of string
+    '''
     blob = tb(blob.strip())
     return len(blob.words)
 
 def getCtf(word, bloblist):
+    '''
+    return term frequency in the collection
+    :param word: term
+    :param bloblist: list of string
+    :return: collection term frequency
+    '''
     bloblist = [tb(doc.strip('\n')) for doc in bloblist]
     return sum(1 for blob in bloblist if word in blob.words)
 
+def getIdf(word, bloblist):
+    '''
+    return inverse document frequency for the word in the collection
+    :param word: term
+    :param bloblist: list of string
+    :return: idf value
+    '''
+    bloblist = [tb(doc.strip()) for doc in bloblist]
+    ctf = sum(1 for blob in bloblist if word in blob.words)
+    idf = math.log(len(bloblist) / ctf) + 1
 
 def getTfidf(word, blob, bloblist):
+    '''
+    return tfidf value for the word in the collection
+    :param word: term
+    :param bloblist: list of string
+    :return: tfidf value
+    '''
     blob = tb(blob.strip())
     bloblist = [tb(doc.strip()) for doc in bloblist]
     tf = blob.words.count(word) / len(blob.words)

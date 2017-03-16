@@ -17,20 +17,6 @@ parser = StanfordParser(model_path="edu/stanford/nlp/models/lexparser/englishPCF
 dep_parser = StanfordDependencyParser(model_path="edu/stanford/nlp/models/lexparser/englishPCFG.ser.gz")
 porter = PorterStemmer()
 
-def getTf(word, blob):
-    blob = tb(blob.strip())
-    return blob.words.count(word) / len(blob.words)
-
-def n_containing(word, bloblist):
-    return sum(1 for blob in bloblist if word in blob.words)
-
-def getIdf(word, bloblist):
-    bloblist = [tb(doc.strip('\n')) for doc in corpus]
-    return math.log(len(bloblist) / n_containing(word, bloblist)) + 1
-
-def getTfidf(word, blob, bloblist):
-    return getTf(word, blob) * getIdf(word, bloblist)
-
 def getPos(words):
     return posTagger.tag(words)
 
@@ -67,6 +53,29 @@ def removeStopWords(words):
 def getStemWord(words):
     return [porter.stem(word) for word in words]
 
+
+def getTf(word, blob):
+    blob = tb(blob.strip())
+    return blob.words.count(word)
+
+def getLen(blob):
+    blob = tb(blob.strip())
+    return len(blob.words)
+
+def getCtf(word, bloblist):
+    bloblist = [tb(doc.strip('\n')) for doc in bloblist]
+    return sum(1 for blob in bloblist if word in blob.words)
+
+
+def getTfidf(word, blob, bloblist):
+    blob = tb(blob.strip())
+    bloblist = [tb(doc.strip()) for doc in bloblist]
+    tf = blob.words.count(word) / len(blob.words)
+    ctf = sum(1 for blob in bloblist if word in blob.words)
+    idf = math.log(len(bloblist) / ctf) + 1
+    return tf * idf
+
+
 # for test purpose
 '''
 corpus = []
@@ -75,10 +84,12 @@ doc2 = "What is the airspeed of an unladen swallow ?"
 doc3 = "Rami Eid is studying at Stony Brook University in NY"
 corpus.append(doc1)
 corpus.append(doc2)
+corpus.append(doc3)
 
-
+print 'doc len', getLen(doc1)
+print 'corpus len', sum(getLen(s) for s in corpus)
 print 'tf', getTf('the',doc1)
-print 'idf', getIdf('the', corpus)
+print 'ctf', getCtf('the', corpus)
 print 'tfidf', getTfidf('the',doc1,corpus)
 print 'pos', getPos(doc1.split())
 print 'nouns', getNouns(doc1.split())

@@ -1,0 +1,184 @@
+import nltk
+import re
+import numpy as np
+from scipy.sparse import hstack
+from sklearn.svm import LinearSVC
+# from practnlptools.tools import Annotator
+from sklearn.feature_extraction.text import CountVectorizer
+from Helper import getPos, getNER
+
+def read_file(filename):
+    res = []
+    with open(filename) as file:
+        for line in file:
+            res.append(line)
+    return res
+
+def global_setting():
+    global folder 
+    folder = 'data/'
+
+def text_to_pos(source_file, tar_file):
+    print '*****Text to PoS transformation begins*****'
+    output = open(tar_file, 'w')
+    with open(source_file) as file:
+        k = 0
+        for line in file:
+            tokens = line.split()
+            tags = getPos(tokens)
+            tar = ''
+            for i in tags:
+                tar += i[1] + ' '
+            k += 1
+            if k % 500 == 0:
+                print k + ' samples extracted...'
+            output.write(tar[:-1] + '\n')
+
+def text_to_ner(source_file, tar_file):
+    print '*****Text to NER transformation begins*****'
+    output = open(tar_file, 'w')
+    with open(source_file, 'r') as file:
+        k = 0
+        for line in file:
+            tokens = line.split()
+            ners = getNER(tokens)
+            tar = ''
+            for i in ners:
+                tar += i[1] + ' '
+            k += 1
+            if k % 500 == 0:
+                print k + ' samples extracted...'
+            output.write(tar[:-1] + '\n')
+
+def text_to_words(source_file, tar_file):
+    print '*****Text to words transformation begins*****'
+    output = open(tar_file, 'w')
+    with open(source_file, 'r') as file:
+        for line in file:
+            tokens = re.sub(r"`",r"'",line).split()
+            tar = ""
+            for i in range(1, len(tokens) - 1):
+                tar += tokens[i] + ' '
+            output.write(tar[:-1] + '\n')
+
+# Used to get labels of training set and test set
+def get_labels(filename):
+    labels = []
+    with open(filename, 'r') as file:
+        for line in file:
+            labels.append(line.split()[0])
+    return labels
+
+# Used to get features of training set and test set
+def vectorize(filename):
+    docs = []
+    with open(filename, 'r') as file:
+        for line in file:
+            docs.append(line)
+    vector = CountVectorizer()
+    return vector.fit_transform(docs), vector
+
+def vectorize_test(filename, vector):
+    docs = []
+    with open(filename, 'r') as file:
+        for line in file:
+            docs.append(line)
+    return vector.transform(docs)
+
+# # Used to get NER features of training set and test set
+# def ner_feature_extraction(filename):
+#     docs = []
+#     with open(filename, 'r') as file:
+#         for line in file:
+#             docs.append(line)
+#     vector = CountVectorizer()
+#     return PoS_vector.fit_transform(corpus)
+
+def feature_construction(fn_list):
+    vectors = []
+    features, word_vector = vectorize(fn_list[0])
+    vectors.append(word_vector)
+    for i in range(1, len(fn_list)):
+        tmp, vect = vectorize(fn_list[i])
+        features = hstack((features, tmp))
+        vectors.append(vect)
+    return features, vectors
+
+def feature_construction_test(fn_list, vectors):
+    features = vectorize_test(fn_list[0], vectors[0])
+    for i in range(1, len(fn_list)):
+        features = hstack((features, vectorize_test(fn_list[i], vectors[i])))
+    return features
+
+def classify(X_train, Y_train, X_test, Y_test):
+    classifier = LinearSVC()
+    classifier = LinearSVC.fit(classifier, X_train, Y_train)
+    labels_test = LinearSVC.predict(classifier, X_test)
+
+    count = 0
+    for i in range(len(labels_test)):
+        if labels_test[i] == Y_test[i]:
+            count += 1
+    print "accuracy is ", (float)(count) / len(labels_test)
+
+def get_file_name(suffix):
+    fn_list = ['words', 'PoS', 'NER']
+    return [folder + i + suffix for i in fn_list]
+
+def main():
+    global_setting()
+    train_fn_list = get_file_name('_train.txt')
+    test_fn_list = get_file_name('_test.txt')
+    train_source = folder + 'AT_train.txt'
+    test_source = folder + 'AT_test.txt'
+
+    # It takes a long time to run pos and ner extraction.
+    # text_to_words(test_source, test_fn_list[0])
+    # text_to_pos(test_fn_list[0], test_fn_list[1])
+    # text_to_ner(test_fn_list[0], test_fn_list[2])
+
+    X_train, vectors = feature_construction(train_fn_list)
+    Y_train = get_labels(train_source)
+
+    X_test = feature_construction_test(test_fn_list, vectors)
+    Y_test = get_labels(test_source)
+
+    classify(X_train, Y_train, X_test, Y_test)
+
+
+main()
+
+
+
+
+
+
+
+
+
+
+
+
+
+# def ner_to_features(ner_source):
+#     ner_map = {}
+#     feats = []
+#     i = 0
+#     for ners in ner_source:
+#         tokens = ners.split()
+#         tmp_set = set()
+#         for token in tokens:
+#             if token != 'O':
+#                 if token not in ner_map:
+#                     ner_map[token] = i
+#                     i += 1
+#                 tmp_set.add(token)
+#         feats.append(tmp_set)
+    
+#     m = len(ner_source)
+#     n = len(ner_map)
+#     array = np.zeros(shape = (m, n))
+#     for i in range(m):
+#         for tmp in feats[i]:
+#             array[i, ner_map[tmp]] = 1
+#     return array

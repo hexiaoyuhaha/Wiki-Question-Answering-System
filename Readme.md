@@ -1,3 +1,9 @@
+# AT_detection.py (by Jiong, March 19)
+This py file will take a sentence question as input and ouptut a answer type classified by SVM. The training set and test set are AT_train.txt and AT_test.txt. Also as the pos tagging and ner process takes a long time, all the feature data are uploaded to the repository.
+
+** Remaining Work **
+Try more features on it.
+
 # Helper.py (by Shuang, March 30)
 Helper.py assume you have following packages:
 - nltk (include some basic corpus like stopwords)

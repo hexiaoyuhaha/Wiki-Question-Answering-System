@@ -3,7 +3,7 @@ import re
 import numpy as np
 from scipy.sparse import hstack
 from sklearn.svm import LinearSVC
-# from practnlptools.tools import Annotator
+from practnlptools.tools import Annotator
 from sklearn.feature_extraction.text import CountVectorizer
 from Helper import getPos, getNER
 
@@ -31,7 +31,7 @@ def text_to_pos(source_file, tar_file):
                 tar += i[1] + ' '
             k += 1
             if k % 500 == 0:
-                print k + ' samples extracted...'
+                print str(k) + ' samples extracted...'
             output.write(tar[:-1] + '\n')
 
 def text_to_ner(source_file, tar_file):
@@ -47,7 +47,7 @@ def text_to_ner(source_file, tar_file):
                 tar += i[1] + ' '
             k += 1
             if k % 500 == 0:
-                print k + ' samples extracted...'
+                print str(k) + ' samples extracted...'
             output.write(tar[:-1] + '\n')
 
 def text_to_words(source_file, tar_file):
@@ -59,6 +59,22 @@ def text_to_words(source_file, tar_file):
             tar = ""
             for i in range(1, len(tokens) - 1):
                 tar += tokens[i] + ' '
+            output.write(tar[:-1] + '\n')
+
+def text_to_chunks(source_file, tar_file):
+    print '*****Text to chunks transformation begins*****'
+    output = open(tar_file, 'w')
+    anno = Annotator()
+    with open(source_file, 'r') as file:
+        k = 0
+        for line in file:
+            ners = anno.getAnnotations(line[:-1])['chunk']
+            tar = ''
+            for i in ners:
+                tar += i[1] + ' '
+            k += 1
+            if k % 500 == 0:
+                print str(k) + ' samples extracted...'
             output.write(tar[:-1] + '\n')
 
 # Used to get labels of training set and test set
@@ -75,7 +91,7 @@ def vectorize(filename):
     with open(filename, 'r') as file:
         for line in file:
             docs.append(line)
-    vector = CountVectorizer()
+    vector = CountVectorizer(ngram_range = (1, 1))
     return vector.fit_transform(docs), vector
 
 def vectorize_test(filename, vector):
@@ -84,15 +100,6 @@ def vectorize_test(filename, vector):
         for line in file:
             docs.append(line)
     return vector.transform(docs)
-
-# # Used to get NER features of training set and test set
-# def ner_feature_extraction(filename):
-#     docs = []
-#     with open(filename, 'r') as file:
-#         for line in file:
-#             docs.append(line)
-#     vector = CountVectorizer()
-#     return PoS_vector.fit_transform(corpus)
 
 def feature_construction(fn_list):
     vectors = []
@@ -115,14 +122,32 @@ def classify(X_train, Y_train, X_test, Y_test):
     classifier = LinearSVC.fit(classifier, X_train, Y_train)
     labels_test = LinearSVC.predict(classifier, X_test)
 
+    label_set = set(Y_test)
+    count_dict = {}
+    hit_dict = {}
     count = 0
     for i in range(len(labels_test)):
+        if Y_test[i] in count_dict:
+            count_dict[Y_test[i]] += 1
+        else:
+            count_dict[Y_test[i]] = 1
         if labels_test[i] == Y_test[i]:
+            if labels_test[i] in hit_dict:
+                hit_dict[labels_test[i]] += 1
+            else:
+                hit_dict[labels_test[i]] = 1
             count += 1
-    print "accuracy is ", (float)(count) / len(labels_test)
+
+    print "Total accuracy is ", (float)(count) / len(labels_test)
+    for key, val in count_dict.iteritems():
+        tmp = 0
+        if key in hit_dict:
+            tmp = float(hit_dict[key]) / val
+        if tmp <= 0.5:
+            print (key + ":%f") %tmp, val
 
 def get_file_name(suffix):
-    fn_list = ['words', 'PoS', 'NER']
+    fn_list = ['words', 'PoS', 'NER', 'chunks']
     return [folder + i + suffix for i in fn_list]
 
 def main():
@@ -136,6 +161,7 @@ def main():
     # text_to_words(test_source, test_fn_list[0])
     # text_to_pos(test_fn_list[0], test_fn_list[1])
     # text_to_ner(test_fn_list[0], test_fn_list[2])
+    # text_to_chunks(test_fn_list[0], test_fn_list[3])
 
     X_train, vectors = feature_construction(train_fn_list)
     Y_train = get_labels(train_source)
@@ -146,39 +172,5 @@ def main():
     classify(X_train, Y_train, X_test, Y_test)
 
 
+
 main()
-
-
-
-
-
-
-
-
-
-
-
-
-
-# def ner_to_features(ner_source):
-#     ner_map = {}
-#     feats = []
-#     i = 0
-#     for ners in ner_source:
-#         tokens = ners.split()
-#         tmp_set = set()
-#         for token in tokens:
-#             if token != 'O':
-#                 if token not in ner_map:
-#                     ner_map[token] = i
-#                     i += 1
-#                 tmp_set.add(token)
-#         feats.append(tmp_set)
-    
-#     m = len(ner_source)
-#     n = len(ner_map)
-#     array = np.zeros(shape = (m, n))
-#     for i in range(m):
-#         for tmp in feats[i]:
-#             array[i, ner_map[tmp]] = 1
-#     return array

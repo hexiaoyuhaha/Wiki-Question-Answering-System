@@ -1,8 +1,13 @@
 # AT_detection.py (by Jiong, March 19)
+You need to have the practnlptools package to run the chunking method.
+Download: http://www.cfilt.iitb.ac.in/biplab/practNLPTools-1.0.tar.gz
+and install the package.
+
 This py file will take a sentence question as input and ouptut a answer type classified by SVM. The training set and test set are AT_train.txt and AT_test.txt. Also as the pos tagging and ner process takes a long time, all the feature data are uploaded to the repository.
 
 **Remaining Work**
-Try more features on it.
+- Though the accuracy result is good, the model could not classify some class labels well. We may pay more attention on this.
+- Try more features to improve the accuracy.
 
 # Helper.py (by Shuang, March 30)
 Helper.py assume you have following packages:

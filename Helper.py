@@ -150,7 +150,7 @@ def getTfidf(word, blob, bloblist):
 
 
 # for test purpose
-'''
+
 corpus = []
 doc1 = "the quick brown fox jumps over the lazy dog"
 doc2 = "What is the airspeed of an unladen swallow ?"
@@ -168,8 +168,7 @@ print 'pos', getPos(doc1.split())
 print 'nouns', getNouns(doc1.split())
 print 'verbs', getVerbs(doc1.split())
 print 'ner', getNER(doc3.split())
-print 'parse tree', getParserTree(doc1)
-print 'dependency tree', getDependencyTree(doc1)
+print 'parse tree', getParserTree(doc2)
+print 'dependency tree', getDependencyTree(doc2)
 print 'remove stopwords', removeStopWords(doc2.split())
 print 'stem word', getStemWord(doc3.split())
-'''

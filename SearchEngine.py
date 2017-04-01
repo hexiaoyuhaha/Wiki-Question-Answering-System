@@ -3,6 +3,9 @@ from Article import Article
 import Helper
 import math
 from textblob import TextBlob as tb
+from collections import defaultdict
+from nltk.tokenize import wordpunct_tokenize
+#from nltk.tokenize import
 
 class SearchEngine:
     """
@@ -23,24 +26,39 @@ class SearchEngine:
         '''
         self.article = article
         self.sentences = article.getRawLines()
-        self.query = query
-        self.result = {}
-        self.sortResult = []
+        self.qargs = wordpunct_tokenize(query)
+        self.result = defaultdict(float)
+        self.doc_len = 0
+        self.myLambda = 0.1
+        self.myMu = 2500
+        # {word: {docid: [doclen, tf],...}
+        self.invertedList = defaultdict(dict)
+        self.initiateInvertedList()
+
+
+    def initiateInvertedList(self):
+        bloblist = [tb(sent.strip()) for sent in self.sentences]
+        for sentid, blob in enumerate(bloblist):
+            sent_len = len(blob.words)
+            self.doc_len += sent_len
+            for word in blob.words:
+                tf = blob.words.count(word)
+                self.invertedList[word][sentid] = (sent_len, tf)
 
 
 
+    """
     def rank(self):
-        '''
-        Main function of search engine.
-        Compute the document score and store it in self.result and self.sortResult
-        '''
+
+        #Main function of search engine.
+        #Compute the document score and store it in self.result and self.sortResult
+
         for index, sentence in enumerate(self.sentences):
             # self.result[index] = self.getDocScore(self.query, sentence)
             self.result[index] = self.getScoreIndri(self.query, sentence)
             #self.result[index] = self.getScoreTfidf(self.query, sentence)
         self.sortResult = sorted(self.result.items(), key=operator.itemgetter(1), reverse=True)
-
-
+        '''
 
     def getDocScore(self, query, sentence):
         '''
@@ -74,39 +92,37 @@ class SearchEngine:
         ctf = sum(1 for blob in bloblist if word in blob.words)
         idf = math.log(len(bloblist) / float(ctf)) + 1
         return tf * idf
+        """
 
 
-    def getScoreIndri(self, query, sentence):
-        qargs = query.split()
-        score = 1
-        bloblist = [tb(doc.strip()) for doc in self.sentences]
-        doc_len = sum(Helper.getLen(s) for s in self.sentences)
-        for q in qargs:
-            score *= self.getIndri(q, sentence, bloblist, doc_len)
-        return math.pow(score, 1.0 / len(qargs))
+    def rankByIndri(self):
+        #print self.invertedList
+        for q in self.qargs:
+            sents = self.invertedList[q]
+            ctf = len(sents)
+            mle = ctf / float(self.doc_len)
+            for sentid, s in enumerate(self.sentences):
+                # initiate score
+                if sentid not in self.result:
+                    self.result[sentid]=1.0
+                if sentid in sents:
+                    sent_len = sents[sentid][0]
+                    tf = sents[sentid][1]
+                    self.result[sentid] *= (1 - self.myLambda) * (tf + self.myMu * mle) / (sent_len + self.myMu) + self.myLambda * mle
+                else:
+                    sent_len = len(tb(s.strip()).words)
+                    self.result[sentid] *= (1-self.myLambda) * (self.myMu * mle) / (sent_len + self.myMu) + self.myLambda * mle
+        for sentid, score in self.result.iteritems():
+            self.result[sentid] = math.pow(score, 1.0 / len(self.qargs))
 
-
-    def getIndri(self, qarg, sentence, bloblist, doc_len):
-        blob = tb(sentence.strip())
-        tf = blob.words.count(qarg)
-        ctf = sum(1 for blob in bloblist if qarg in blob.words)
-        myLambda = 0.1
-        myMu = 2500
-        sentence_len = len(blob.words)
-        # mle
-        mle = ctf / float(doc_len)
-        score = (1 - myLambda) * (tf + myMu * mle) / (sentence_len + myMu) + myLambda * mle
-        return score
 
 
     def returnTopKResult(self, k):
         '''
         Return the top K ranking results
         '''
-        topKSentences = [self.sentences[index] for index, score in self.sortResult[:k]]
+        topKSentences = sorted(self.result.items(), key=lambda d: -d[1])[:k]
         return topKSentences
-
-
 
 
 
@@ -114,7 +130,6 @@ class SearchEngine:
 article = Article('data/a1.htm')
 query = 'New England Revolution selected eighth 2004'
 se = SearchEngine(article, query)
-se.rank()
-print se.sortResult[:10]
+se.rankByIndri()
 for i in se.returnTopKResult(10):
-    print i
+    print i,se.sentences[i[0]]

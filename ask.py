@@ -21,6 +21,7 @@ Remaining work:
 - add unmovable mark
 - add more rules
 - check plural
+- coreference resolution
 - VBN, VBG check
 
 stanford pos treebank

@@ -1,11 +1,15 @@
 import sys
 from nltk.corpus import stopwords
-from Article import *
-from SearchEngine import *
+from Article import Article
+from SearchEngine import SearchEngine
 from nltk import word_tokenize
 import string
-from AnswerExtraction import get_answer
+from AnswerExtraction import AnswerExtraction
 from AT_detection import at_detect
+
+
+verbose = True
+RETRIEVAL_LIMIT = 5
 
 
 def readQuestions(questionFilePath):
@@ -29,7 +33,6 @@ def remove_stop_words(sentence):
 
 
 
-verbose = True
 
 if __name__ == '__main__':
     try:
@@ -42,27 +45,40 @@ if __name__ == '__main__':
     inputFilePath = 'data/a1.txt'
     questionFilePath = 'data/a1-question.txt'
     article = Article(inputFilePath)
+
+    # Get questions, queries, expected_types
     questions = readQuestions(questionFilePath)
-
     queries = [remove_stop_words(question) for question in questions]
-    # queries = [question for question in questions]
-
     expected_types = at_detect(questionFilePath)
-    print expected_types
+    # expected_types = ['PERSON']
+    assert len(expected_types) == len(questions)
+    assert len(expected_types) == len(queries)
+
+
+    # Init classes
     se = SearchEngine(article)
-    for i, query in enumerate(queries):
+    ansextr = AnswerExtraction()
+    ansextr.verbose = verbose
+
+    for i in range(len(queries)):
         if verbose:
-            print 'query:', query
+            print 'query:', queries[i]
 
+        result = se.rankByIndri(queries[i])
+        topSentence = se.returnTopKResult(result, RETRIEVAL_LIMIT)
 
-        result = se.rankByIndri(query)
-        topResults = se.returnTopKResult(result, 10)
-
+        finalAnswer = ''
         # Retrieve the top rankning answers
-        for i in se.returnTopKResult(result, 10):
+        for sentence in topSentence:
             if verbose:
-                print i, se.sentences[i[0]]
-            answer = answer(question)
-            pred_answer = get_answer(question, expected_types[i], answer)
+                print 'questions[i]: %s\nqueries[i]: %s\n expected_types: %s\n sentence:%s' \
+                      % (questions[i], queries[i], expected_types[i], sentence)
+
+            answer = ansextr.get_answer(question[i], expected_types[i], sentence)
+            if answer != '/':
+                finalAnswer = answer
+                break
+        print finalAnswer
+
 
 

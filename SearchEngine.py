@@ -80,7 +80,8 @@ class SearchEngine:
         '''
         Return the top K ranking results
         '''
-        topKSentences = sorted(result.items(), key=lambda d: -d[1])[:k]
+        topKResult = sorted(result.items(), key=lambda d: -d[1])[:k]
+        topKSentences = [self.sentences[sentid] for sentid, sent in topKResult]
         return topKSentences
 
 

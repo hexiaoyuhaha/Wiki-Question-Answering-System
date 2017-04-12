@@ -5,7 +5,6 @@ nlp = spacy.load('en')
 '''
 Careful! NER tag is case sensitive
 '''
-
 def get_ner_token_pair(text):
     doc = nlp(text)
     result = []

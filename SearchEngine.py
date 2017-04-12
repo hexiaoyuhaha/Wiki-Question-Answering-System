@@ -104,7 +104,7 @@ class SearchEngine:
             for sentid, s in enumerate(self.sentences):
                 # initiate score
                 if sentid not in self.result:
-                    self.result[sentid]=1.0
+                    self.result[sentid] = 1.0
                 if sentid in sents:
                     sent_len = sents[sentid][0]
                     tf = sents[sentid][1]
@@ -126,10 +126,10 @@ class SearchEngine:
 
 
 
-
-article = Article('data/a1.htm')
-query = 'New England Revolution selected eighth 2004'
-se = SearchEngine(article, query)
-se.rankByIndri()
-for i in se.returnTopKResult(10):
-    print i,se.sentences[i[0]]
+if __name__ == '__main__':
+    article = Article('data/a1.htm')
+    query = 'New England Revolution selected eighth 2004'
+    se = SearchEngine(article, query)
+    se.rankByIndri()
+    for i in se.returnTopKResult(10):
+        print i,se.sentences[i[0]]

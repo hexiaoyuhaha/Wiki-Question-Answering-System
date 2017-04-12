@@ -105,6 +105,7 @@ def classify(X_train, Y_train, X_test, Y_test):
     with open('data/mapping.json', 'r') as file:
         mapping = json.loads(file.read())
 
+    result = []
     with open('data/AT_type_result.txt', 'w') as file:
         for label in labels_test:
             res = ''
@@ -113,6 +114,9 @@ def classify(X_train, Y_train, X_test, Y_test):
             else:
                 res = 'OTHER' + '\n'
             file.write(res)
+            result.append(res[:-1])
+    return result
+
 
 def get_file_name(suffix):
     fn_list = ['words', 'PoS', 'NER']
@@ -126,9 +130,9 @@ def at_detect(filename):
     predict_source = filename
 
     # It takes a long time to run pos and ner extraction.
-    text_to_words(train_source, train_fn_list[0])
-    text_to_pos(train_fn_list[0], train_fn_list[1])
-    text_to_ner(train_fn_list[0], train_fn_list[2])
+    # text_to_words(train_source, train_fn_list[0])
+    # text_to_pos(train_fn_list[0], train_fn_list[1])
+    # text_to_ner(train_fn_list[0], train_fn_list[2])
 
     text_to_words(predict_source, predict_fn_list[0])
     text_to_pos(predict_fn_list[0], predict_fn_list[1])
@@ -140,9 +144,10 @@ def at_detect(filename):
     X_test = feature_construction_test(predict_fn_list, vectors)
     Y_test = get_labels(predict_source)
 
-    classify(X_train, Y_train, X_test, Y_test)
+    return classify(X_train, Y_train, X_test, Y_test)
 
 
 if __name__ == '__main__':
     arg = sys.argv
+    arg = ['', 'data/AT_test.txt']
     at_detect(arg[1])

@@ -34,8 +34,10 @@ class Article:
         elif fileName.endswith('.txt'):
             with open(fileName) as file:
                 self.filePath = fileName
-                self.title = file.readline().strip()
-                doc = file.read()
+                self.title = file.readline()
+                lines = file.readlines()
+                lines = [line.strip() for line in lines if line]
+                doc = ' '.join(lines)
                 self.rawLines = tokenizer.tokenize(doc.decode('utf-8'))
         else:
             print 'Error, unable to read file', fileName

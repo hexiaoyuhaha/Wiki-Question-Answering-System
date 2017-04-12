@@ -1,4 +1,5 @@
 import spacy
+from answer import verbose
 
 nlp = spacy.load('en')
 
@@ -12,16 +13,6 @@ def get_ner_token_pair(text):
         result += [(ent.label_, ent.text)]
     return result
 
-
-def get_answer(question, potent_types, retrieved_passage):
-    ner_token_pair = get_ner_token_pair(unicode(retrieved_passage))
-    print retrieved_passage
-    print ner_token_pair
-    if ner_token_pair:
-        for ner, token in ner_token_pair:
-            if ner in potent_types:
-                return token
-    return '/'
 
 
 def read_data(filepath):
@@ -39,20 +30,44 @@ def read_data(filepath):
     return data
 
 
+def get_answer(question, expected_type, retrieved_passage):
+    '''
+    where, who, when
+    :param question:
+    :param expected_type:
+    :param retrieved_passage:
+    :return:
+    '''
+    if expected_type in ['GPE', 'LOC'] or question.lower().strip().startswith("where"):
+        potential_tag = ['GPE', 'LOC']
+    else:
+        potent_types = [expected_type]
+
+    ner_token_pair = get_ner_token_pair(unicode(retrieved_passage))
+    if verbose:
+        print retrieved_passage
+        print ner_token_pair
+    if ner_token_pair:
+        for ner, token in ner_token_pair:
+            if ner in potent_types:
+                return token
+    return '/'
+
+
 if __name__ == '__main__':
     # Where question
     # training data, list of tuple(queston, answer)
     train_data = read_data("data/AnsEx_train_where.txt")
     # train_data = [('','Bullet ants are located in Central and South America.')]
     m = len(train_data)
-    potential_tag = ['GPE', 'LOC']
+
 
     # for each record, find it's answer
     count_right = 0
     count_empty = 0
     for question, answer in train_data:
         print '=='
-        pred_answer = get_answer(question, potential_tag, answer)
+        pred_answer = get_answer(question, 'LOC', answer)
         if pred_answer in answer:
             print '+', pred_answer
             count_right += 1

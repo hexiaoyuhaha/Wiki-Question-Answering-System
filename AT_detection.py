@@ -9,23 +9,21 @@ import spacy
 
 def global_setting():
     global folder 
-    folder = 'data/'    
+    folder = 'data/'
+    global mod
+    mod = {}   
 
 def text_to_pos(source_file, tar_file):
     print '*****Text to PoS transformation begins*****'
     output = open(tar_file, 'w')
     nlp = spacy.load('en')
     with open(source_file) as file:
-        k = 0
         for line in file:
             line = unicode(line[:-1], "utf-8")
             tokens = nlp(line)
             tar = ''
             for tok in tokens:
                 tar += tok.tag_ + ' '
-            k += 1
-            if k % 500 == 0:
-                print str(k) + ' samples extracted...'
             output.write(tar[:-1] + '\n')
 
 def text_to_ner(source_file, tar_file):
@@ -33,28 +31,36 @@ def text_to_ner(source_file, tar_file):
     output = open(tar_file, 'w')
     nlp = spacy.load('en')
     with open(source_file, 'r') as file:
-        k = 0
         for line in file:
             line = unicode(line[:-1], "utf-8")
             doc = nlp(line)
             tar = ''
             for ent in doc.ents:
                 tar += ent.label_ + ' '
-            k += 1
-            if k % 500 == 0:
-                print str(k) + ' samples extracted...'
             output.write(tar[:-1] + '\n')
 
 def text_to_words(source_file, tar_file):
     print '*****Text to words transformation begins*****'
     output = open(tar_file, 'w')
     with open(source_file, 'r') as file:
+        k = 0
         for line in file:
             tokens = re.sub(r"`",r"'",line).split()
             tar = ""
-            for i in range(1, len(tokens) - 1):
+            for i in range(len(tokens) - 1):
                 tar += tokens[i] + ' '
+            modify(tokens[0], k)
+            k += 1
             output.write(tar[:-1] + '\n')
+
+def modify(token, k):
+    token = token.lower()
+    if token == 'when':
+        mod[k] = 'DATE'
+    elif token == 'where':
+        mod[k] = 'GPE'
+    elif token == 'who':
+        mod[k] = 'PERSON'
 
 # Used to get labels of training set and test set
 def get_labels(filename):
@@ -115,7 +121,14 @@ def classify(X_train, Y_train, X_test, Y_test):
                 res = 'OTHER' + '\n'
             file.write(res)
             result.append(res[:-1])
-    return result
+    # for key, val in mod.iteritems():
+    #     result[i] = val
+    # return result
+    count = 0
+    for i in range(len(labels_test)):
+        if labels_test[i] == Y_test[i]:
+            count += 1
+    print "accuracy is ", (float)(count) / len(labels_test)
 
 
 def get_file_name(suffix):
@@ -146,8 +159,30 @@ def at_detect(filename):
 
     return classify(X_train, Y_train, X_test, Y_test)
 
+def difficulty_detect():
+    global_setting()
+    train_fn_list = get_file_name('_diff_train.txt')
+    predict_fn_list = get_file_name('_diff_predict.txt')
+    train_source = folder + 'difficulty_train.txt'
+    predict_source = folder + 'difficulty_test.txt'
+
+    text_to_words(train_source, train_fn_list[0])
+    text_to_pos(train_fn_list[0], train_fn_list[1])
+    text_to_ner(train_fn_list[0], train_fn_list[2])
+    text_to_words(predict_source, predict_fn_list[0])
+    text_to_pos(predict_fn_list[0], predict_fn_list[1])
+    text_to_ner(predict_fn_list[0], predict_fn_list[2])
+
+    X_train, vectors = feature_construction(train_fn_list)
+    Y_train = get_labels(train_source)
+
+    X_test = feature_construction_test(predict_fn_list, vectors)
+    Y_test = get_labels(predict_source)
+    classify(X_train, Y_train, X_test, Y_test)
+
 
 if __name__ == '__main__':
-    arg = sys.argv
-    arg = ['', 'data/AT_test.txt']
-    at_detect(arg[1])
+    difficulty_detect()
+    # arg = sys.argv
+    # arg = ['', 'data/AT_test.txt']
+    # at_detect(arg[1])

@@ -8,7 +8,7 @@ from AnswerExtraction import AnswerExtraction
 from AT_detection import at_detect
 
 
-verbose = True
+verbose = False
 RETRIEVAL_LIMIT = 5
 
 
@@ -40,17 +40,18 @@ if __name__ == '__main__':
         questionFilePath = sys.argv[2]
     except:
         print "ERROR: Unable to read input argument!!"
+        inputFilePath = 'data/a1.txt'
+        questionFilePath = 'ques1.txt'
         # exit(1)
 
-    inputFilePath = 'data/a1.txt'
-    questionFilePath = 'data/a1-question.txt'
+
     article = Article(inputFilePath)
 
     # Get questions, queries, expected_types
     questions = readQuestions(questionFilePath)
     queries = [remove_stop_words(question) for question in questions]
     expected_types = at_detect(questionFilePath)
-    # expected_types = ['PERSON']
+
     assert len(expected_types) == len(questions)
     assert len(expected_types) == len(queries)
 
@@ -74,11 +75,14 @@ if __name__ == '__main__':
                 print 'questions[i]: %s\nqueries[i]: %s\n expected_types: %s\n sentence:%s' \
                       % (questions[i], queries[i], expected_types[i], sentence)
 
-            answer = ansextr.get_answer(question[i], expected_types[i], sentence)
+            answer = ansextr.get_answer(queries[i], expected_types[i], sentence)
             if answer != '/':
                 finalAnswer = answer
                 break
-        print finalAnswer
+        if verbose:
+            print '==finalAnswer==:', finalAnswer
+        else:
+            print finalAnswer
 
 
 

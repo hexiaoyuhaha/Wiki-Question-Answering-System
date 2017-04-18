@@ -7,12 +7,15 @@ from sklearn.svm import LinearSVC
 from sklearn.feature_extraction.text import CountVectorizer
 import spacy
 
+verbose = False
+
 def global_setting():
     global folder 
     folder = 'data/'    
 
 def text_to_pos(source_file, tar_file):
-    print '*****Text to PoS transformation begins*****'
+    if verbose:
+        print '*****Text to PoS transformation begins*****'
     output = open(tar_file, 'w')
     nlp = spacy.load('en')
     with open(source_file) as file:
@@ -24,12 +27,14 @@ def text_to_pos(source_file, tar_file):
             for tok in tokens:
                 tar += tok.tag_ + ' '
             k += 1
-            if k % 500 == 0:
-                print str(k) + ' samples extracted...'
+            if verbose:
+                if k % 500 == 0:
+                    print str(k) + ' samples extracted...'
             output.write(tar[:-1] + '\n')
 
 def text_to_ner(source_file, tar_file):
-    print '*****Text to NER transformation begins*****'
+    if verbose:
+        print '*****Text to NER transformation begins*****'
     output = open(tar_file, 'w')
     nlp = spacy.load('en')
     with open(source_file, 'r') as file:
@@ -41,12 +46,14 @@ def text_to_ner(source_file, tar_file):
             for ent in doc.ents:
                 tar += ent.label_ + ' '
             k += 1
-            if k % 500 == 0:
-                print str(k) + ' samples extracted...'
+            if verbose:
+                if k % 500 == 0:
+                    print str(k) + ' samples extracted...'
             output.write(tar[:-1] + '\n')
 
 def text_to_words(source_file, tar_file):
-    print '*****Text to words transformation begins*****'
+    if verbose:
+        print '*****Text to words transformation begins*****'
     output = open(tar_file, 'w')
     with open(source_file, 'r') as file:
         for line in file:

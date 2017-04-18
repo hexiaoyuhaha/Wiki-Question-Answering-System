@@ -24,8 +24,9 @@ class AnswerExtraction:
         :param retrieved_passage:
         :return:
         '''
+
         if expected_type in ['GPE', 'LOC'] or question.lower().strip().startswith("where"):
-            potential_tag = ['GPE', 'LOC']
+            potent_types = ['GPE', 'LOC']
         elif expected_type == 'OTHER':
             return '/'
         else:

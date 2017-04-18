@@ -423,7 +423,6 @@ hard
 hard
 medium
 hard
-medium
 easy
 medium
 medium

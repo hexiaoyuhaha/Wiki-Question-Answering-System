@@ -1,3 +1,4 @@
+import codecs
 import re
 import sys
 import json
@@ -22,7 +23,7 @@ def text_to_pos(source_file, tar_file):
     nlp = spacy.load('en')
     with open(source_file) as file:
         for line in file:
-            line = unicode(line[:-1], "utf-8")
+            line = unicode(line[:-1], encoding='utf-8', errors='ignore')
             tokens = nlp(line)
             tar = ''
             for tok in tokens:
@@ -36,7 +37,7 @@ def text_to_ner(source_file, tar_file):
     nlp = spacy.load('en')
     with open(source_file, 'r') as file:
         for line in file:
-            line = unicode(line[:-1], "utf-8")
+            line = unicode(line[:-1],encoding='utf-8', errors='ignore')
             doc = nlp(line)
             tar = ''
             for ent in doc.ents:
@@ -50,13 +51,17 @@ def text_to_words(source_file, tar_file):
     with open(source_file, 'r') as file:
         k = 0
         for line in file:
-            tokens = re.sub(r"`",r"'",line).split()
-            tar = ""
-            for i in range(len(tokens) - 1):
-                tar += tokens[i] + ' '
-            modify(tokens[0], k)
-            k += 1
-            output.write(tar[:-1] + '\n')
+            line = line.strip()
+            if line:
+                tokens = re.sub(r"`",r"'",line).split()
+                tar = ""
+                for i in range(len(tokens) - 1):
+                    tar += tokens[i] + ' '
+                if len(tokens) < 1:
+                    print 'haha'
+                modify(tokens[0], k)
+                k += 1
+                output.write(tar[:-1] + '\n')
 
 def modify(token, k):
     token = token.lower()
@@ -70,7 +75,7 @@ def modify(token, k):
 # Used to get labels of training set and test set
 def get_labels(filename):
     labels = []
-    with open(filename, 'r') as file:
+    with codecs.open(filename, "r",encoding='utf-8', errors='ignore') as file:
         for line in file:
             labels.append(line.split()[0])
     return labels
@@ -78,7 +83,7 @@ def get_labels(filename):
 # Used to get features of training set and test set
 def vectorize(filename):
     docs = []
-    with open(filename, 'r') as file:
+    with codecs.open(filename, "r",encoding='utf-8', errors='ignore') as file:
         for line in file:
             docs.append(line)
     vector = CountVectorizer(ngram_range = (1, 2))
@@ -86,7 +91,7 @@ def vectorize(filename):
 
 def vectorize_test(filename, vector):
     docs = []
-    with open(filename, 'r') as file:
+    with codecs.open(filename, "r",encoding='utf-8', errors='ignore') as file:
         for line in file:
             docs.append(line)
     return vector.transform(docs)

@@ -24,9 +24,20 @@ class AnswerExtraction:
         :param retrieved_passage:
         :return:
         '''
-
+'''
+    if token == 'when':
+        mod[k] = 'DATE'
+    elif token == 'where':
+        mod[k] = 'GPE'
+    elif token == 'who':
+        mod[k] = 'PERSON'
+'''
         if expected_type in ['GPE', 'LOC'] or question.lower().strip().startswith("where"):
             potent_types = ['GPE', 'LOC']
+        elif expected_type in ['GPE', 'LOC'] or question.lower().strip().startswith("where"):
+            potent_types = ['GPE', 'LOC']
+        elif expected_type in ['GPE', 'LOC'] or question.lower().strip().startswith("where"):
+                    potent_types = ['GPE', 'LOC']
         elif expected_type == 'OTHER':
             return '/'
         else:

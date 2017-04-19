@@ -6,6 +6,8 @@ from nltk import word_tokenize
 import string
 from AnswerExtraction import AnswerExtraction
 from AT_detection import at_detect
+from nltk.stem import PorterStemmer
+ps = PorterStemmer()
 
 
 verbose = True
@@ -20,7 +22,7 @@ def readQuestions(questionFilePath):
         return output
 
 
-def remove_stop_words(sentence):
+def remove_stop_words_stem(sentence):
     """Remove stop words"""
     #get words
     example_words = word_tokenize(sentence)
@@ -28,6 +30,8 @@ def remove_stop_words(sentence):
     example_words = filter(lambda x: x not in string.punctuation, example_words)
     #remove stopwords
     example_words = [word for word in example_words if word not in stopwords.words('english')]
+    # stem the words
+    example_words = [ps.stem(word) for word in example_words]
     return ' '.join(example_words)
 
 
@@ -48,7 +52,7 @@ def main(argv):
     # Get questions, queries, expected_types
     questions = readQuestions(questionFilePath)
     expected_types = at_detect(questionFilePath)
-    queries = [remove_stop_words(question) for question in questions]
+    queries = [remove_stop_words_stem(question) for question in questions]
 
     assert len(expected_types) == len(questions)
     assert len(expected_types) == len(queries)

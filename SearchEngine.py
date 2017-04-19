@@ -4,7 +4,11 @@ import math
 from textblob import TextBlob as tb
 from collections import defaultdict
 from nltk.tokenize import wordpunct_tokenize
+from nltk.stem import PorterStemmer
+from nltk.tokenize import sent_tokenize, word_tokenize
+ps = PorterStemmer()
 
+verbose = True
 
 class SearchEngine:
     """
@@ -24,6 +28,7 @@ class SearchEngine:
         '''
         self.article = article
         self.sentences = article.getRawLines()
+        self.sentences_stem = article.getRawLines_stem()
 
         self.doc_len = 0
         self.myLambda = 0.1
@@ -34,7 +39,7 @@ class SearchEngine:
 
 
     def initiateInvertedList(self):
-        bloblist = [tb(sent.strip()) for sent in self.sentences]
+        bloblist = [tb(sent.strip()) for sent in self.sentences_stem]
         for sentid, blob in enumerate(bloblist):
             sent_len = len(blob.words)
             self.doc_len += sent_len
@@ -50,8 +55,12 @@ class SearchEngine:
         :return:
         '''
         #print self.invertedList
-        qargs = wordpunct_tokenize(query)
+        qargs = [ps.stem(word) for word in wordpunct_tokenize(query)] # wordpunct_tokenize(query)
         result = defaultdict(float)
+        if verbose:
+            print '-' * 10
+            print 'query:', query
+            print 'qargs:', ' '.join(qargs)
 
         for q in qargs:
             sents = self.invertedList[q]
@@ -59,7 +68,7 @@ class SearchEngine:
             mle = ctf / float(self.doc_len)
             if mle == 0:
                 continue
-            for sentid, s in enumerate(self.sentences):
+            for sentid, s in enumerate(self.sentences_stem):
                 # initiate score
                 if sentid not in result:
                     result[sentid] = 1.0
@@ -85,14 +94,23 @@ class SearchEngine:
         return topKSentences
 
 
-if __name__ == '__main__':
-    article = Article('data/a1.htm')
-    query = 'New England Revolution selected eighth 2004'
+def test(article, query):
+    query = 'Who did Alessandro Volta marry?'
     se = SearchEngine(article)
     result = se.rankByIndri(query)
-    for i in se.returnTopKResult(result, 10):
-        print i, se.sentences[i[0]]
+    print '\n'.join(se.returnTopKResult(result, 5))
 
+
+if __name__ == '__main__':
+    article = Article('S10/article/Alessandro_Volta.txt')
+    queries_path = 'S10/article/Alessandro_Volta_question.txt'
+    queries = []
+    with open(queries_path) as infile:
+        for line in infile:
+            queries.append(line.strip())
+    queries = list(set(queries))
+    for query in queries:
+        test(article, query)
 
 """
 def rank(self):

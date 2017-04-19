@@ -8,7 +8,7 @@ from AnswerExtraction import AnswerExtraction
 from AT_detection import at_detect
 
 
-verbose = False
+verbose = True
 RETRIEVAL_LIMIT = 5
 
 

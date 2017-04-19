@@ -72,6 +72,7 @@ def modify(token, k):
     elif token == 'who':
         mod[k] = 'PERSON'
 
+
 # Used to get labels of training set and test set
 def get_labels(filename):
     labels = []
@@ -133,7 +134,7 @@ def classify(X_train, Y_train, X_test, Y_test):
             result.append(res[:-1])
     # for key, val in mod.iteritems():
     #     result[i] = val
-    # return result
+    return result
     count = 0
     for i in range(len(labels_test)):
         if labels_test[i] == Y_test[i]:
@@ -192,7 +193,7 @@ def difficulty_detect():
 
 
 if __name__ == '__main__':
-    difficulty_detect()
+    # difficulty_detect()
     # arg = sys.argv
-    # arg = ['', 'data/AT_test.txt']
-    # at_detect(arg[1])
+    arg = ['', 'data/AT_test.txt']
+    at_detect(arg[1])

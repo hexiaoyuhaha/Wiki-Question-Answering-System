@@ -37,8 +37,10 @@ class Article:
                 self.title = file.readline()
                 lines = file.readlines()
                 lines = [line.strip() for line in lines if line]
-                doc = ' '.join(lines)
-                self.rawLines = tokenizer.tokenize(doc.decode('utf-8'))
+                # doc = ' '.join(lines)
+                self.rawLines = []
+                for line in lines:
+                    self.rawLines += tokenizer.tokenize(line.decode('utf-8'))
         else:
             print 'Error, unable to read file', fileName
 

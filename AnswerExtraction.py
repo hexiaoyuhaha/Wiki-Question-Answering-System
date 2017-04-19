@@ -1,5 +1,12 @@
 import spacy
 
+location_types = ['GPE', 'LOC']
+date_types = ['DATE', 'TIME']
+person_types = ['PERSON', 'NORP']
+is_types = ['is', 'was', 'are', 'were']
+do_types = ['did', 'do', 'does']
+
+
 class AnswerExtraction:
     verbose = False
 
@@ -15,14 +22,7 @@ class AnswerExtraction:
             result += [(ent.label_, ent.text)]
         return result
 
-    '''
-        if token == 'when':
-            mod[k] = 'DATE'
-        elif token == 'where':
-            mod[k] = 'GPE'
-        elif token == 'who':
-            mod[k] = 'PERSON'
-    '''
+
     def get_answer(self, question, expected_type, retrieved_passage):
         '''
         where, who, when
@@ -31,17 +31,15 @@ class AnswerExtraction:
         :param retrieved_passage:
         :return:
         '''
-        location_types = ['GPE', 'LOC']
-        date_types = ['DATE', 'TIME']
-        person_types = ['PERSON', 'NORP']
-        if expected_type in location_types or question.lower().strip().startswith("where"):
+        headword = question.split(" ")[0].lower()
+        if headword in is_types or headword in do_types or expected_type == 'OTHER':
+            return self.get_anwer_other(question, retrieved_passage)
+        elif expected_type in location_types or question.lower().strip().startswith("where"):
             potent_types = location_types
         elif expected_type in date_types or question.lower().strip().startswith("when"):
             potent_types = date_types
         elif expected_type in person_types or question.lower().strip().startswith("who"):
             potent_types = person_types
-        elif expected_type == 'OTHER':
-            return get_anwer_other(question, retrieved_passage)
         else:
             potent_types = [expected_type]
 
@@ -53,7 +51,6 @@ class AnswerExtraction:
                 if ner in potent_types:
                     return token
         return '/'
-
 
     def get_anwer_other(self, question, retrieved_passage):
         '''
@@ -70,9 +67,9 @@ class AnswerExtraction:
         :return:
         '''
         headword = question.split(" ")[0].lower()
-        if headword in ['is', 'was']:
+        if headword in is_types:
             return 'yes'
-        elif headword in ['did', 'do', 'does']:
+        elif headword in do_types:
             return 'yse'
         elif headword == 'what':
             return retrieved_passage

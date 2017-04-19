@@ -32,12 +32,10 @@ def remove_stop_words(sentence):
 
 
 
-
-
-if __name__ == '__main__':
+def main(argv):
     try:
-        inputFilePath = sys.argv[1]
-        questionFilePath = sys.argv[2]
+        inputFilePath = argv[1]
+        questionFilePath = argv[2]
     except:
         print "ERROR: Unable to read input argument!!"
         inputFilePath = 'data/a1.txt'
@@ -49,8 +47,8 @@ if __name__ == '__main__':
 
     # Get questions, queries, expected_types
     questions = readQuestions(questionFilePath)
-    queries = [remove_stop_words(question) for question in questions]
     expected_types = at_detect(questionFilePath)
+    queries = [remove_stop_words(question) for question in questions]
 
     assert len(expected_types) == len(questions)
     assert len(expected_types) == len(queries)
@@ -75,7 +73,7 @@ if __name__ == '__main__':
                 print 'questions[i]: %s\nqueries[i]: %s\n expected_types: %s\n sentence:%s' \
                       % (questions[i], queries[i], expected_types[i], sentence)
 
-            answer = ansextr.get_answer(queries[i], expected_types[i], sentence)
+            answer = ansextr.get_answer(questions[i], expected_types[i], sentence)
             if answer != '/':
                 finalAnswer = answer
                 break
@@ -83,6 +81,10 @@ if __name__ == '__main__':
             print '==finalAnswer==:', finalAnswer
         else:
             print finalAnswer
+
+
+if __name__ == '__main__':
+    main(sys.argv)
 
 
 

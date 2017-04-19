@@ -15,7 +15,14 @@ class AnswerExtraction:
             result += [(ent.label_, ent.text)]
         return result
 
-
+    '''
+        if token == 'when':
+            mod[k] = 'DATE'
+        elif token == 'where':
+            mod[k] = 'GPE'
+        elif token == 'who':
+            mod[k] = 'PERSON'
+    '''
     def get_answer(self, question, expected_type, retrieved_passage):
         '''
         where, who, when
@@ -24,22 +31,17 @@ class AnswerExtraction:
         :param retrieved_passage:
         :return:
         '''
-'''
-    if token == 'when':
-        mod[k] = 'DATE'
-    elif token == 'where':
-        mod[k] = 'GPE'
-    elif token == 'who':
-        mod[k] = 'PERSON'
-'''
-        if expected_type in ['GPE', 'LOC'] or question.lower().strip().startswith("where"):
-            potent_types = ['GPE', 'LOC']
-        elif expected_type in ['GPE', 'LOC'] or question.lower().strip().startswith("where"):
-            potent_types = ['GPE', 'LOC']
-        elif expected_type in ['GPE', 'LOC'] or question.lower().strip().startswith("where"):
-                    potent_types = ['GPE', 'LOC']
+        location_types = ['GPE', 'LOC']
+        date_types = ['DATE', 'TIME']
+        person_types = ['PERSON', 'NORP']
+        if expected_type in location_types or question.lower().strip().startswith("where"):
+            potent_types = location_types
+        elif expected_type in date_types or question.lower().strip().startswith("when"):
+            potent_types = date_types
+        elif expected_type in person_types or question.lower().strip().startswith("who"):
+            potent_types = person_types
         elif expected_type == 'OTHER':
-            return '/'
+            return get_anwer_other(question, retrieved_passage)
         else:
             potent_types = [expected_type]
 
@@ -51,6 +53,30 @@ class AnswerExtraction:
                 if ner in potent_types:
                     return token
         return '/'
+
+
+    def get_anwer_other(self, question, retrieved_passage):
+        '''
+        Is Avogadro's number used to compute the results of chemical reactions?
+        Was Alessandro Volta a professor of chemistry?
+
+        Did Alessandro Volta invent the remotely operated pistol?
+        Do male ants take flight before females?
+
+        What did Alessandro Volta invent in 1800?
+
+        :param question:
+        :param retrieved_passage:
+        :return:
+        '''
+        headword = question.split(" ")[0].lower()
+        if headword in ['is', 'was']:
+            return 'yes'
+        elif headword in ['did', 'do', 'does']:
+            return 'yse'
+        elif headword == 'what':
+            return retrieved_passage
+
 
 
 def read_data(filepath):

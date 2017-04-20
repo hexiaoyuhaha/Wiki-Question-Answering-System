@@ -527,6 +527,7 @@ def ask(farticle, nquestions):
     sentences = article.getRawLines()
     if VERBOSE:
         logger.debug('sentences\t%slen%d' % (sentences[0],len(sentences)))
+    #sentences = ['The positively charged hydrogen bubbles start depositing around the copper and take away some of its electrons.']
     #sentences = ['Caat is the electromotive force -LRB- emf -RRB- of a galvanic cell between their two electrode potentials.']
     #sentences = ['10 fishes are dying']
     #sentences = ['The word ant is derived from ante of Middle English which is derived from mette of Old English and is related to the Old High German meiza , hence the modern German Ameise.']
@@ -548,6 +549,7 @@ def ask(farticle, nquestions):
     #sentences = ['Dempsey was born in Nacogdoches, Texas, and, for much of his childhood, his family lived in a trailer park, where he and his siblings grew up playing soccer with Hispanic immigrants. ']
     for sent in sentences:
         sent = sent.encode('ascii', 'ignore').decode('ascii')
+        sent = re.sub(u'\(.*\) ','', sent)
         # simplify sentence
         for (TYPE, pattern) in patterns:
             #print 'sent \t%s pattern \t%s TYPE \t%s' % (sent, pattern, TYPE)

@@ -1,5 +1,7 @@
 import spacy
 from AnswerExtractionYesNo import get_yes_no_answer
+from settings import verbose
+
 
 location_types = ['GPE', 'LOC']
 date_types = ['DATE', 'TIME']
@@ -14,7 +16,6 @@ do_pos = ['did', 'do', 'does']
 do_neg = ["didn't", "don't", "doesn't"]
 
 nlp = spacy.load('en')
-verbose = True
 
 
 def get_ner_token_pair(text):
@@ -34,7 +35,7 @@ def get_NER_answer(potent_types, retrieved_passage):
         for ner, token in ner_token_pair:
             if ner in potent_types:
                 return token
-    return '/'
+    return retrieved_passage
 
 
 def get_answer(question, expected_type, retrieved_passage):
@@ -56,10 +57,10 @@ def get_answer(question, expected_type, retrieved_passage):
         return get_anwer_other(question, retrieved_passage)
     elif expected_type in location_types or question.lower().strip().startswith("where"):
         potent_types = location_types
-        get_NER_answer(potent_types, retrieved_passage)
+        return get_NER_answer(potent_types, retrieved_passage)
     elif expected_type in date_types or question.lower().strip().startswith("when"):
         potent_types = date_types
-        get_NER_answer(potent_types, retrieved_passage)
+        return get_NER_answer(potent_types, retrieved_passage)
     elif expected_type in person_types or question.lower().strip().startswith("who"):
         potent_types = person_types
         return retrieved_passage

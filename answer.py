@@ -1,18 +1,18 @@
 import sys
 from nltk.corpus import stopwords
-from Article import Article
-from SearchEngine import SearchEngine
 from nltk import word_tokenize
 import string
-from AT_detection import at_detect
 from nltk.stem import PorterStemmer
 from nltk.tokenize import wordpunct_tokenize
-from AnswerExtraction import get_answer
 import codecs
 
-ps = PorterStemmer()
+from Article import Article
+from SearchEngine import SearchEngine
+from AT_detection import at_detect
+from AnswerExtraction import get_answer
+from settings import verbose
 
-verbose = False
+ps = PorterStemmer()
 RETRIEVAL_LIMIT = 5
 
 

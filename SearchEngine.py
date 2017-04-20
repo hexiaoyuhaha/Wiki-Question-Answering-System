@@ -5,9 +5,11 @@ from textblob import TextBlob as tb
 from collections import defaultdict
 from nltk.tokenize import wordpunct_tokenize
 from nltk.stem import PorterStemmer
+from settings import verbose
+
+
 ps = PorterStemmer()
 
-verbose = False
 
 class SearchEngine:
     """

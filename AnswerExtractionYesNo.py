@@ -1,6 +1,5 @@
 import spacy
-
-verbose = False
+from settings import verbose
 
 nlp = spacy.load('en')
 
@@ -69,7 +68,7 @@ def get_yes_no_answer(text1, text2):
     doc2_nouns = get_noun_lemma_no_person(doc2)
     doc1_names = find_person_name(doc1)
 
-    if not doc1_nouns:
+    if not doc1_nouns and not doc1_names:
         return 'EMPTY'
 
     if verbose:

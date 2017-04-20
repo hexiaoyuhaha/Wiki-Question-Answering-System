@@ -14,7 +14,13 @@ ps = PorterStemmer()
 class SearchEngine:
     """
     SearchEngine class finds the best match sentences
-    using given document and query
+    using given document and query.
+
+    During the information retrieval, query are removed with stop words, stemmed using Porter Stemmer.
+    The lines used for matching is also stemmed, with stop words in them.
+
+    But returnTopKResult() return the original sentence, instead of the stemmed one.
+
 
     Attributes:
         result: ranking result, dict {sentenceIdx: sentence score}
@@ -23,9 +29,11 @@ class SearchEngine:
     """
     def __init__(self, article):
         '''
-        Init the class with article and query
+        Init the class with article.
+        Multiple query can be performed on one article,
+        thus only need to initialize the article inverted list once.
+
         :param article: input list of sentences
-        :param query: list of query words, assuming no stop words in the query
         '''
         self.article = article
         self.sentences = article.getRawLines()
@@ -40,6 +48,10 @@ class SearchEngine:
 
 
     def initiateInvertedList(self):
+        '''
+        Initialized the inverted list
+        :return:
+        '''
         bloblist = [tb(sent.strip()) for sent in self.sentences_stem]
         for sentid, blob in enumerate(bloblist):
             sent_len = len(blob.words)
@@ -51,9 +63,10 @@ class SearchEngine:
 
     def rankByIndri(self, query):
         '''
+        Given the query, compute the ranking score for each sentence.
 
         :param query: String of query words
-        :return:
+        :return: the list of ranking tuple (sentence id, score)
         '''
         # stem the query. Remove the first token
         qargs = [ps.stem(word) for word in wordpunct_tokenize(query)] # wordpunct_tokenize(query)
@@ -89,7 +102,7 @@ class SearchEngine:
 
     def returnTopKResult(self, result, k):
         '''
-        Return the top K ranking results
+        Return the top K original sentence.
         '''
         topKResult = sorted(result.items(), key=lambda d: -d[1])[:k]
         topKSentences = [self.sentences[sentid] for sentid, sent in topKResult]
@@ -97,6 +110,12 @@ class SearchEngine:
 
 
 def test(article, query):
+    '''
+    For local Search Engine testing purpose.
+    :param article:
+    :param query:
+    :return:
+    '''
     se = SearchEngine(article)
     result = se.rankByIndri(query)
     if verbose:
@@ -113,51 +132,4 @@ if __name__ == '__main__':
                 queries.append(line.strip())
     for query in queries:
         test(article, query)
-
-"""
-def rank(self):
-
-    #Main function of search engine.
-    #Compute the document score and store it in self.result and self.sortResult
-
-    for index, sentence in enumerate(self.sentences):
-        # self.result[index] = self.getDocScore(self.query, sentence)
-        self.result[index] = self.getScoreIndri(self.query, sentence)
-        #self.result[index] = self.getScoreTfidf(self.query, sentence)
-    self.sortResult = sorted(self.result.items(), key=operator.itemgetter(1), reverse=True)
-    '''
-
-def getDocScore(self, query, sentence):
-    '''
-    compute the sentence score
-    :param query: list of query words
-    :param sentence: string
-    :return: sentence score
-    '''
-    return
-
-
-
-def getScoreTfidf(self, query, sentence):
-    '''
-    compute the sentence score
-    :param query: list of query words
-    :param sentence: string
-    :return: sentence score
-    '''
-    qargs = query.split()
-    score = 0
-    bloblist = [tb(doc.strip()) for doc in self.sentences]
-    for q in qargs:
-        score += self.getTfidf(q, sentence, bloblist)
-    return score
-
-
-def getTfidf(self, word, blob, bloblist):
-    blob = tb(blob.strip())
-    tf = blob.words.count(word) / float(len(blob.words))
-    ctf = sum(1 for blob in bloblist if word in blob.words)
-    idf = math.log(len(bloblist) / float(ctf)) + 1
-    return tf * idf
-    """
 

@@ -4,7 +4,7 @@ from ginger_python2 import get_grammar_error
 
 # print get_grammar_error("Did Mary note by Luigi Galvani when two different metals were connected in series with the frog 's leg and to one another ?")
 diversity_map = {'why': 5, 'how many': 1, 'how much': 1, 'what': -1}
-percent_map = {'what': 1, 'when': 1, 'where': 1, 'who': 1, 'how many': 1, 'how much': 1, 'how': 1, 'why': 1, 'do': 1, 'are': 1, 'have': 1}
+percent_map = {'what': 1, 'when': 1, 'where': 1, 'who': 1, 'how many': 1, 'how much': 1, 'how': 1, 'why': 1, 'do': 1, 'are': 1, 'have': 1, 'did': 1, 'does': 1, 'were': 1, 'was': 1, 'is': 1, 'had': 1, 'has': 1}
 zero_error = []
 
 def get_complexity(questions):
@@ -16,6 +16,7 @@ def get_complexity(questions):
     return np.asarray(comlexity)
 
 def get_score(questions, N):
+    questions = list(questions)
     tuple_list = map(lambda x : score_func(x), questions)
     hard_scores = map(lambda x : x[1], tuple_list)
     com_scores = map(lambda x : x[2], tuple_list)
@@ -37,7 +38,7 @@ def get_score(questions, N):
         if ele[3] and percent_map[ele[3]] > 0:
             res.add(ele[0])
             percent_map[ele[3]] -= 1
-            print percent_map
+            # print percent_map
             N -= 1
         if N == 0:
             break
@@ -56,13 +57,13 @@ def score_func(x):
     com_score = func(leng)
     hard_score = 1
     head = None
-    if tokens[0] in diversity_map or (tokens[0] + ' ' + tokens[1]) in diversity_map:
+    if tokens[0] in percent_map or (tokens[0] + ' ' + tokens[1]) in percent_map:
         hard_score = 0
     for i in range(leng):
-        if i < leng - 1 and (tokens[i] + ' ' + tokens[i + 1]) in diversity_map:
+        if i < leng - 1 and (tokens[i] + ' ' + tokens[i + 1]) in percent_map:
             head = tokens[i] + ' ' + tokens[i + 1]
             break
-        if tokens[i] in diversity_map:
+        if tokens[i] in percent_map:
             head = tokens[i]
             break
     if not head:
@@ -89,10 +90,7 @@ def get_error(questions):
             zero_error.append(questions[i])
             # N -= 1
         errors.append(err)
-        if i % 10 == 0:
-            print i
     max_error = max(errors)
-    # print errors
     if max_error == 0:
         return np.asarray(errors)
     return np.asarray(map(lambda x : float(x) / max_error, errors))
@@ -146,16 +144,15 @@ def second_round(filtered, N):
     sorted_res = sorted(res.items(), key = operator.itemgetter(1), reverse = True)
     return sorted_res[:N]
 
-def main():
+def ranking(questions, N):
     questions = []
-    with open('Wiki-Question-Answering-System/ques1.txt', 'r') as file:
+    with open('ques1.txt', 'r') as file:
         for line in file:
             if line:
-                questions.append(line[:-1])
+                questions.append(line.strip())
     # res = second_round(first_round(set(questions)), 20)
     res = get_score(questions, 50)
-    for i in res:
-        print i
+
 
 if __name__ == '__main__':
     main()

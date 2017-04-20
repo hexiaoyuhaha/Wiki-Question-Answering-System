@@ -12,6 +12,7 @@ import logging
 from collections import defaultdict
 import random
 import copy
+import question_evaluator
 
 nlp = spacy.load('en')
 
@@ -546,8 +547,6 @@ def get_words_and_tags(tree, TAG=False):
 
 
 
-def rankQues(ques_pool, nquestions):
-    return list(ques_pool)
 
 
 def ask(farticle, nquestions):
@@ -584,7 +583,7 @@ def ask(farticle, nquestions):
         for (TYPE, pattern) in patterns:
             #print 'sent \t%s pattern \t%s TYPE \t%s' % (sent, pattern, TYPE)
             getSimpleSentence(sent, pattern, TYPE)
-    rankedQues = rankQues(ques_pool, nquestions)
+    rankedQues = question_evaluator.get_score(ques_pool, nquestions)
     for q in rankedQues:
         print q
     #print 'total ques', len(ques_pool)

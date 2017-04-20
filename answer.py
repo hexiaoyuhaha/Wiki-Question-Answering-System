@@ -12,7 +12,7 @@ import codecs
 
 ps = PorterStemmer()
 
-verbose = True
+verbose = False
 RETRIEVAL_LIMIT = 5
 
 

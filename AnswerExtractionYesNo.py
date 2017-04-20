@@ -1,5 +1,7 @@
 import spacy
 
+verbose = False
+
 nlp = spacy.load('en')
 
 is_types = ['is', 'was', 'are', 'were']
@@ -58,9 +60,10 @@ def get_yes_no_answer(text1, text2):
     doc1 = nlp(text1)
     doc2 = nlp(text2)
 
-    # print 'show doc'
-    # show(doc1)
-    # show(doc2)
+    # if verbose:
+        # print 'show doc'
+        # show(doc1)
+        # show(doc2)
 
     doc1_nouns = get_noun_lemma_no_person(doc1)
     doc2_nouns = get_noun_lemma_no_person(doc2)
@@ -69,17 +72,18 @@ def get_yes_no_answer(text1, text2):
     if not doc1_nouns:
         return 'EMPTY'
 
-    print '-' * 10
-    print 'doc1_nouns', doc1_nouns
-    print 'doc2_nouns', doc2_nouns
+    if verbose:
+        print '-' * 10
+        print 'doc1_nouns', doc1_nouns
+        print 'doc2_nouns', doc2_nouns
 
-    print '-' * 10
-    print 'doc1_names', doc1_names
-    print '-' * 10
+        print '-' * 10
+        print 'doc1_names', doc1_names
+        print '-' * 10
 
     for word in doc1_nouns:
         if word not in doc2_nouns:
-            return False
+            return 'No'
 
     for name in doc1_names:
         # if at least part of this name is contained in doc2
@@ -120,7 +124,7 @@ def find_person_name(doc):
 #     text1 = u'Was Alessandro Volta a professor of chemistry?'
 #     text2 = u'In 1776-77 Volta studied the chemistry of gases, he discovered methane by collecting the gas from marshes.'
 #     print noun_words_match(text1, text2)
-
-
-if __name__ == '__main__':
-    main()
+#
+#
+# if __name__ == '__main__':
+#     main()

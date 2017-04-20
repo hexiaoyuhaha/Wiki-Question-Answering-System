@@ -7,7 +7,7 @@ from nltk.tokenize import wordpunct_tokenize
 from nltk.stem import PorterStemmer
 ps = PorterStemmer()
 
-verbose = True
+verbose = False
 
 class SearchEngine:
     """

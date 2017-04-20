@@ -5,6 +5,8 @@ import shutil
 import os
 import answer
 
+verbose = False
+
 S10_folder = "S10/"
 out_folder = "S10/article/"
 

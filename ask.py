@@ -204,9 +204,18 @@ def ques_word_from_subject(np, doc):
             has_ner = True
         if word.tag_.endswith('S'):
             is_plural = True
-    if how_many_index > -1:
-        qw = 'how many ' if is_plural else 'how much '
-        qw_res.append(qw + ' '.join(np[how_many_index + 1:]))
+    # how many question with % fixed
+    if how_many_index > -1 and len(np)>how_many_index+1:
+        if np[how_many_index+1] == '%':
+            qw = 'how many percent '
+            if len(np) > how_many_index + 2:
+                qw_res.append(qw + ' '.join(np[how_many_index + 2:]))
+        elif np[how_many_index].endswith('%'):
+            qw = 'how many percent '
+            qw_res.append(qw + ' '.join(np[how_many_index + 1:]))
+        else:
+            qw = 'how many ' if is_plural else 'how much '
+            qw_res.append(qw + ' '.join(np[how_many_index + 1:]))
     if has_ner:
         np_doc = nlp(' '.join(np))
         for ne in np_doc.ents:
@@ -219,7 +228,7 @@ def ques_word_from_subject(np, doc):
     # but actually if the ner is GPE, the best question word should be which country/city/state, but it's hard to decide which one to choose
     qw_res.append('what')
     nouns = ' '.join(np)
-    if not subj_pron:
+    if not subj_pron and nouns != '%':
         noun_plu_set.add(nouns.lower()) if is_plural else noun_sing_set.add(nouns.lower())
     return qw_res, subj_pron
 
@@ -275,9 +284,28 @@ def ques_word_from_object(np, vp, doc, reason, simpleSent):
                         else:
                             noun_sing_set.add(nouns.lower())
                         break
-                qw = 'how many' if plural_noun else 'how much'
-                ques = simpleSent.replace(word.text, qw, 1)
+                if nouns.startswith('km/') or nouns.startswith('m/') or nouns.startswith('mph'):
+                    qw = 'how fast '
+                    ques = simpleSent.replace(word.text, qw, 1)
+                    ques = ques.replace(nouns.split(' ')[0],'',1)
+                    nouns = ' '.join(nouns.split(' ')[1:])
+                    qw_res.append(('how fast ' + nouns.strip(), verbs.strip()))
+                else:
+                    if nouns.startswith('%'):
+                        qw = 'how many percent'
+                        ques = simpleSent.replace(word.text + ' %', qw, 1)
+                        # % is treated as noun, don't generate question like How many percent does the cat eat ?
+                        # nouns = nouns.replace('%', '', 1)
+                        # qw_res.append(('how many percent ' + nouns.strip(), verbs.strip()))
+                    elif word.text.endswith('%'):
+                        qw = 'how many percent '
+                        ques = simpleSent.replace(word.text, qw, 1)
+                    else:
+                        qw = 'how many ' if plural_noun else 'how much '
+                        qw_res.append((qw + nouns.strip(), verbs.strip()))
+                        ques = simpleSent.replace(word.text, qw, 1)
                 qw_res.append((False, ques))
+
         if word.ent_type:
             has_ner = True
     # if contains named entities, generate who/when/where question
@@ -527,6 +555,8 @@ def ask(farticle, nquestions):
     sentences = article.getRawLines()
     if VERBOSE:
         logger.debug('sentences\t%slen%d' % (sentences[0],len(sentences)))
+    #sentences = ['The car drives 100km/h']
+    #sentences = ['The electrolyte exists in the form 2H +  and SO 4  2- .']
     #sentences = ['The positively charged hydrogen bubbles start depositing around the copper and take away some of its electrons.']
     #sentences = ['Caat is the electromotive force -LRB- emf -RRB- of a galvanic cell between their two electrode potentials.']
     #sentences = ['10 fishes are dying']

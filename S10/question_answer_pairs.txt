@@ -25,7 +25,7 @@ Alessandro_Volta	Was Volta made a count in 1810?	yes	easy	easy	data/set4/a10
 Alessandro_Volta	Was Volta made a count in 1810?	No.	easy	easy	data/set4/a10
 Alessandro_Volta	Who made Volta a count?	Napoleon	medium	medium	data/set4/a10
 Alessandro_Volta	Who made Volta a count?	Napoleon	medium	medium	data/set4/a10
-Alessandro_Volta	Where was Volta born?	Como	medium	medium	data/set4/a10
+Alessandro_Volta	Where was Volta borvn?	Como	medium	medium	data/set4/a10
 Alessandro_Volta	Where was Volta born?	Como, Italy	medium	medium	data/set4/a10
 Alessandro_Volta	When did Volta retire?	1819	medium	medium	data/set4/a10
 Alessandro_Volta	When did Volta retire?	In 1819.	medium	medium	data/set4/a10
@@ -39,7 +39,7 @@ Alessandro_Volta	Wasn't Alessandro Volta born in Como?	Yes, Volta was born in Co
 Alessandro_Volta	Was Alessandro Volta born in Como?	yes	NULL	easy	data/set4/a10
 Alessandro_Volta	Who became a professor of physics at the Royal School in Como?	Volta.	NULL	hard	data/set4/a10
 Alessandro_Volta	When was Volta made a count by Napoleon?	Volta was made a count by Napoleon in 1810.	NULL	medium	data/set4/a10
-Alessandro_Volta	Is Voltas legacy celebrated by a Temple on the shore of Lake Como in the center of the town?	Yes	NULL	easy	data/set4/a10
+Alessandro_Volta	Is Volta's legacy celebrated by a Temple on the shore of Lake Como in the center of the town?	Yes	NULL	easy	data/set4/a10
 Alessandro_Volta	Is the battery made by Volta credited as the first electrochemical cell?	Yes	NULL	easy	data/set4/a10
 Alessandro_Volta	Was Volta made a count by Napoleon in 1810?	Yes, Volta was made a count by Napoleon in 1810.	NULL	easy	data/set4/a10
 Alessandro_Volta	In what year did he become a professor of physics at the Royal School in Como?	1774	NULL	medium	data/set4/a10

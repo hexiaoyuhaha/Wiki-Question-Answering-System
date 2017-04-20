@@ -4,6 +4,7 @@ Read the question_
 import shutil
 import os
 import answer
+from settings import verbose
 
 S10_folder = "S10/"
 out_folder = "S10/article/"
@@ -15,7 +16,8 @@ def generate_evaluation_files():
 
     with open(os.path.join(S10_folder, "question_answer_pairs.txt")) as infile:
         header = infile.readline()
-        print 'len:', len(header.split("\t")), 'header:', header
+        if verbose:
+            print 'len:', len(header.split("\t")), 'header:', header
         lines = infile.readlines()
         data = [line.strip().split("\t") for line in lines if line.strip()]
 
@@ -62,7 +64,7 @@ def generate_evaluation_files():
 
 def test_answer():
     article_file_path = 'S10/article/Alessandro_Volta.txt'
-    question_file_path = 'S10/article/Alessandro_Volta_question.txt'
+    question_file_path = 'Ales.ques.txt'   # 'S10/article/Alessandro_Volta_question.txt'
     argv = ['', article_file_path, question_file_path]
     answer.main(argv)
 

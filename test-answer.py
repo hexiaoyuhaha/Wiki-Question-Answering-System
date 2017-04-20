@@ -11,6 +11,11 @@ out_folder = "S10/article/"
 
 
 def generate_evaluation_files():
+    '''
+    For extracting the test data from S10 data.
+    Only need to run it once. No need to run anymore.
+    :return:
+    '''
     # "ArticleTitle	Question	Answer	DifficultyFromQuestioner	DifficultyFromAnswerer	ArticleFile"
     # Alessandro_Volta	Was Alessandro Volta a professor of chemistry?	No	easy	hard	data/set4/a10
 

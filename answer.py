@@ -17,7 +17,11 @@ RETRIEVAL_LIMIT = 5
 
 
 def readQuestions(questionFilePath):
-    """Read questions from file."""
+    '''
+    Read questions from file.
+    :param string questionFilePath:
+    :return: list of questions
+    '''
     with codecs.open(questionFilePath, encoding='utf-8', errors='replace') as infile:
         lines = infile.readlines()
         output = [line.strip() for line in lines]

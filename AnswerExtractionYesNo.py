@@ -3,6 +3,8 @@ from settings import verbose
 
 nlp = spacy.load('en')
 
+# Possible headers for Is, Do type questions
+# _pos and _neg type can be used in the future work
 is_types = ['is', 'was', 'are', 'were']
 is_pos = ['is', 'was', 'are', 'were']
 is_neg = ["isn't", "wasn't", "aren't", "weren't"]
@@ -13,6 +15,10 @@ do_neg = ["didn't", "don't", "doesn't"]
 
 
 def show_structure(doc):
+    '''
+    Dependency parsing.
+    :param doc: spaCy doc class
+    '''
     print doc
     for token in doc:
         print '%15s | %8d |% 10s | %15s' % (token.text, token.dep,
@@ -21,6 +27,10 @@ def show_structure(doc):
 
 
 def show(doc):
+    '''
+    show detail information about the given doc
+    :param doc: spaCy doc class
+    '''
     print '-' * 10
     for word in doc:
         print word.text, word.lemma_, word.tag_, word.pos_, word.ent_type_
@@ -33,6 +43,10 @@ def show_noun_trunk(doc):
 
 
 def show_noun(doc):
+    '''
+    show all the noun in the sentence
+    :param doc: spaCy doc class
+    '''
     print '-' * 10, 'show_noun'
     for word in doc:
         if word.pos_ in ['NOUN', 'PROPN']:
@@ -40,6 +54,10 @@ def show_noun(doc):
 
 
 def get_noun_lemma_no_person(doc):
+    '''
+    Get all the lemmatized nouns except nouns that are person name.
+    :param doc: spaCy doc class
+    '''
     result = []
     for word in doc:
         if word.pos_ in ['NOUN', 'PROPN'] and word.ent_type_ != 'PERSON':
@@ -48,6 +66,10 @@ def get_noun_lemma_no_person(doc):
 
 
 def get_noun_lemma(doc):
+    '''
+    Get all the lemmatized nouns.
+    :param doc: spaCy doc class
+    '''
     result = []
     for word in doc:
         if word.pos_ in ['NOUN', 'PROPN']:
@@ -55,19 +77,31 @@ def get_noun_lemma(doc):
     return result
 
 
-def get_yes_no_answer(text1, text2):
-    doc1 = nlp(text1)
-    doc2 = nlp(text2)
+def get_yes_no_answer(ques_text, sent_text):
+    '''
+    A heuristic stategy for answering Yes or No for Is, Do type question.
+    The basic idea is that, if the answer is yes, then all the noun in the question should be found in the retrieved
+    sentence. However, in many situation, question may contain full person name while retrieved sentence only contains
+    first name or last name. So we used NER tagger to identify person name, and allow partial match in person name.
 
-    # if verbose:
-        # print 'show doc'
-        # show(doc1)
-        # show(doc2)
+    For noun phrase match, we use lemmatized word.
+    For name matching, it's case sensitive and exact match.
 
-    doc1_nouns = get_noun_lemma_no_person(doc1)
-    doc2_nouns = get_noun_lemma_no_person(doc2)
-    doc1_names = find_person_name(doc1)
+    For some sentence that do not contain any noun (including name), our heuristic strategy will fail. In this case, we
+    just return 'EMPTY'.
 
+    :param string ques_text: string format of question
+    :param string sent_text: string format of retrieved sentence from search engine
+    :return: 'YES', 'NO', 'EMPTY'
+    '''
+    ques = nlp(ques_text)
+    sent = nlp(sent_text)
+
+    doc1_nouns = get_noun_lemma_no_person(ques)
+    doc2_nouns = get_noun_lemma_no_person(sent)
+    doc1_names = find_person_name(ques)
+
+    # if
     if not doc1_nouns and not doc1_names:
         return 'EMPTY'
 
@@ -89,7 +123,7 @@ def get_yes_no_answer(text1, text2):
         # name = ['Alessandro', 'Volta']
         flag = False
         for token in name:
-            if token in doc2.text:
+            if token in sent.text:
                 flag = True
                 break
         if flag == False:

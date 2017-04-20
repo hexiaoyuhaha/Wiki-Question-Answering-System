@@ -55,13 +55,13 @@ def get_answer(question, expected_type, retrieved_passage):
             return result  # Yes, No
     elif expected_type in ['OTHER', 'CARDINAL']:
         return get_anwer_other(question, retrieved_passage)
-    elif expected_type in location_types or question.lower().strip().startswith("where"):
+    elif question.lower().strip().startswith("where"):  # expected_type in location_types
         potent_types = location_types
         return get_NER_answer(potent_types, retrieved_passage)
-    elif expected_type in date_types or question.lower().strip().startswith("when"):
+    elif question.lower().strip().startswith("when"):  # expected_type in date_types
         potent_types = date_types
         return get_NER_answer(potent_types, retrieved_passage)
-    elif expected_type in person_types or question.lower().strip().startswith("who"):
+    elif question.lower().strip().startswith("who"):  # expected_type in person_types 
         potent_types = person_types
         return retrieved_passage
     else:

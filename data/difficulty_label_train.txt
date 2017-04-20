@@ -375,7 +375,6 @@ medium
 hard
 medium
 easy
-
 medium
 medium
 easy

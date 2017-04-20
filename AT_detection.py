@@ -131,7 +131,7 @@ def classify(classifier_fn, X_test, Y_test = []):
             res = 'OTHER'
         result.append(res)
     for key, val in mod.iteritems():
-        result[i] = val
+        result[key] = val
 
     # count = 0
     # for i in range(len(labels_test)):
@@ -153,7 +153,7 @@ def at_detect(filename):
     predict_fn_list = get_file_name('_predict.txt')
 
     # It takes a long time to run pos and ner extraction.
-    text_to_words(test_source, predict_fn_list[0])
+    text_to_words(filename, predict_fn_list[0])
     text_to_pos(predict_fn_list[0], predict_fn_list[1])
     text_to_ner(predict_fn_list[0], predict_fn_list[2])
 

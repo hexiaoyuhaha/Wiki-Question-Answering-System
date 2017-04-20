@@ -4,11 +4,13 @@ from Article import Article
 from SearchEngine import SearchEngine
 from nltk import word_tokenize
 import string
-from AnswerExtraction import AnswerExtraction
 from AT_detection import at_detect
 from nltk.stem import PorterStemmer
-ps = PorterStemmer()
+from nltk.tokenize import wordpunct_tokenize
+from AnswerExtraction import get_answer
+import codecs
 
+ps = PorterStemmer()
 
 verbose = True
 RETRIEVAL_LIMIT = 5
@@ -16,24 +18,10 @@ RETRIEVAL_LIMIT = 5
 
 def readQuestions(questionFilePath):
     """Read questions from file."""
-    with open(questionFilePath) as infile:
+    with codecs.open(questionFilePath, encoding='utf-8', errors='replace') as infile:
         lines = infile.readlines()
         output = [line.strip() for line in lines]
         return output
-
-
-def remove_stop_words_stem(sentence):
-    """Remove stop words"""
-    #get words
-    example_words = word_tokenize(sentence)
-    #remove punctuation
-    example_words = filter(lambda x: x not in string.punctuation, example_words)
-    #remove stopwords
-    example_words = [word for word in example_words if word not in stopwords.words('english')]
-    # stem the words
-    example_words = [ps.stem(word) for word in example_words]
-    return ' '.join(example_words)
-
 
 
 def main(argv):
@@ -52,37 +40,35 @@ def main(argv):
     # Get questions, queries, expected_types
     questions = readQuestions(questionFilePath)
     expected_types = at_detect(questionFilePath)
-    queries = [remove_stop_words_stem(question) for question in questions]
+    # queries = [remove_stop_words_stem(question) for question in questions]
 
     assert len(expected_types) == len(questions)
-    assert len(expected_types) == len(queries)
+    # assert len(expected_types) == len(queries)
 
 
     # Init classes
     se = SearchEngine(article)
-    ansextr = AnswerExtraction()
-    ansextr.verbose = verbose
 
-    for i in range(len(queries)):
+
+    for i in range(len(questions)):
         if verbose:
-            print 'query:', queries[i]
+            print '-' * 10
 
-        result = se.rankByIndri(queries[i])
+        result = se.rankByIndri(questions[i])
         topSentence = se.returnTopKResult(result, RETRIEVAL_LIMIT)
 
         finalAnswer = ''
         # Retrieve the top rankning answers
         for sentence in topSentence:
             if verbose:
-                print 'questions[i]: %s\nqueries[i]: %s\n expected_types: %s\n sentence:%s' \
-                      % (questions[i], queries[i], expected_types[i], sentence)
+                print 'expected_types: %s\n sentence:%s' % (expected_types[i], sentence)
 
-            answer = ansextr.get_answer(questions[i], expected_types[i], sentence)
+            answer = get_answer(questions[i], expected_types[i], sentence)
             if answer != '/':
                 finalAnswer = answer
                 break
         if verbose:
-            print '==finalAnswer==:', finalAnswer
+            print '==finalAnswer==  ', finalAnswer
         else:
             print finalAnswer
 
@@ -92,3 +78,14 @@ if __name__ == '__main__':
 
 
 
+# def remove_stop_words_stem(sentence):
+#     """Remove stop words"""
+#     #get words
+#     example_words = word_tokenize(sentence)
+#     #remove punctuation
+#     example_words = filter(lambda x: x not in string.punctuation, example_words)
+#     #remove stopwords
+#     example_words = [word for word in example_words if word not in stopwords.words('english')]
+#     # stem the words
+#     example_words = [ps.stem(word) for word in wordpunct_tokenize(example_words)]
+#     return ' '.join(example_words)

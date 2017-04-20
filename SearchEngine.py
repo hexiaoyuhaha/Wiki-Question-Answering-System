@@ -5,7 +5,6 @@ from textblob import TextBlob as tb
 from collections import defaultdict
 from nltk.tokenize import wordpunct_tokenize
 from nltk.stem import PorterStemmer
-from nltk.tokenize import sent_tokenize, word_tokenize
 ps = PorterStemmer()
 
 verbose = True
@@ -54,11 +53,12 @@ class SearchEngine:
         :param query: String of query words
         :return:
         '''
-        #print self.invertedList
+        # stem the query. Remove the first token
         qargs = [ps.stem(word) for word in wordpunct_tokenize(query)] # wordpunct_tokenize(query)
+        qargs = qargs[1:]
+
         result = defaultdict(float)
         if verbose:
-            print '-' * 10
             print 'query:', query
             print 'qargs:', ' '.join(qargs)
 
@@ -95,10 +95,10 @@ class SearchEngine:
 
 
 def test(article, query):
-    query = 'Who did Alessandro Volta marry?'
     se = SearchEngine(article)
     result = se.rankByIndri(query)
-    print '\n'.join(se.returnTopKResult(result, 5))
+    if verbose:
+        print '\t','\n\t'.join(se.returnTopKResult(result, 5))
 
 
 if __name__ == '__main__':
@@ -107,8 +107,8 @@ if __name__ == '__main__':
     queries = []
     with open(queries_path) as infile:
         for line in infile:
-            queries.append(line.strip())
-    queries = list(set(queries))
+            if line.strip() not in queries:
+                queries.append(line.strip())
     for query in queries:
         test(article, query)
 

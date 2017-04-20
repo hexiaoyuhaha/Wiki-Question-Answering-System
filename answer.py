@@ -6,9 +6,11 @@ from nltk import word_tokenize
 import string
 from AnswerExtraction import AnswerExtraction
 from AT_detection import at_detect
+from nltk.stem import PorterStemmer
+ps = PorterStemmer()
 
 
-verbose = False
+verbose = True
 RETRIEVAL_LIMIT = 5
 
 
@@ -20,7 +22,7 @@ def readQuestions(questionFilePath):
         return output
 
 
-def remove_stop_words(sentence):
+def remove_stop_words_stem(sentence):
     """Remove stop words"""
     #get words
     example_words = word_tokenize(sentence)
@@ -28,16 +30,16 @@ def remove_stop_words(sentence):
     example_words = filter(lambda x: x not in string.punctuation, example_words)
     #remove stopwords
     example_words = [word for word in example_words if word not in stopwords.words('english')]
+    # stem the words
+    example_words = [ps.stem(word) for word in example_words]
     return ' '.join(example_words)
 
 
 
-
-
-if __name__ == '__main__':
+def main(argv):
     try:
-        inputFilePath = sys.argv[1]
-        questionFilePath = sys.argv[2]
+        inputFilePath = argv[1]
+        questionFilePath = argv[2]
     except:
         print "ERROR: Unable to read input argument!!"
         inputFilePath = 'data/a1.txt'
@@ -49,8 +51,8 @@ if __name__ == '__main__':
 
     # Get questions, queries, expected_types
     questions = readQuestions(questionFilePath)
-    queries = [remove_stop_words(question) for question in questions]
     expected_types = at_detect(questionFilePath)
+    queries = [remove_stop_words_stem(question) for question in questions]
 
     assert len(expected_types) == len(questions)
     assert len(expected_types) == len(queries)
@@ -75,7 +77,7 @@ if __name__ == '__main__':
                 print 'questions[i]: %s\nqueries[i]: %s\n expected_types: %s\n sentence:%s' \
                       % (questions[i], queries[i], expected_types[i], sentence)
 
-            answer = ansextr.get_answer(queries[i], expected_types[i], sentence)
+            answer = ansextr.get_answer(questions[i], expected_types[i], sentence)
             if answer != '/':
                 finalAnswer = answer
                 break
@@ -83,6 +85,10 @@ if __name__ == '__main__':
             print '==finalAnswer==:', finalAnswer
         else:
             print finalAnswer
+
+
+if __name__ == '__main__':
+    main(sys.argv)
 
 
 

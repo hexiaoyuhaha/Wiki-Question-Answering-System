@@ -1,5 +1,12 @@
 import spacy
 
+location_types = ['GPE', 'LOC']
+date_types = ['DATE', 'TIME']
+person_types = ['PERSON', 'NORP']
+is_types = ['is', 'was', 'are', 'were']
+do_types = ['did', 'do', 'does']
+
+
 class AnswerExtraction:
     verbose = False
 
@@ -24,22 +31,15 @@ class AnswerExtraction:
         :param retrieved_passage:
         :return:
         '''
-'''
-    if token == 'when':
-        mod[k] = 'DATE'
-    elif token == 'where':
-        mod[k] = 'GPE'
-    elif token == 'who':
-        mod[k] = 'PERSON'
-'''
-        if expected_type in ['GPE', 'LOC'] or question.lower().strip().startswith("where"):
-            potent_types = ['GPE', 'LOC']
-        elif expected_type in ['GPE', 'LOC'] or question.lower().strip().startswith("where"):
-            potent_types = ['GPE', 'LOC']
-        elif expected_type in ['GPE', 'LOC'] or question.lower().strip().startswith("where"):
-                    potent_types = ['GPE', 'LOC']
-        elif expected_type == 'OTHER':
-            return '/'
+        headword = question.split(" ")[0].lower()
+        if headword in is_types or headword in do_types or expected_type == 'OTHER':
+            return self.get_anwer_other(question, retrieved_passage)
+        elif expected_type in location_types or question.lower().strip().startswith("where"):
+            potent_types = location_types
+        elif expected_type in date_types or question.lower().strip().startswith("when"):
+            potent_types = date_types
+        elif expected_type in person_types or question.lower().strip().startswith("who"):
+            potent_types = person_types
         else:
             potent_types = [expected_type]
 
@@ -51,6 +51,29 @@ class AnswerExtraction:
                 if ner in potent_types:
                     return token
         return '/'
+
+    def get_anwer_other(self, question, retrieved_passage):
+        '''
+        Is Avogadro's number used to compute the results of chemical reactions?
+        Was Alessandro Volta a professor of chemistry?
+
+        Did Alessandro Volta invent the remotely operated pistol?
+        Do male ants take flight before females?
+
+        What did Alessandro Volta invent in 1800?
+
+        :param question:
+        :param retrieved_passage:
+        :return:
+        '''
+        headword = question.split(" ")[0].lower()
+        if headword in is_types:
+            return 'yes'
+        elif headword in do_types:
+            return 'yse'
+        elif headword == 'what':
+            return retrieved_passage
+
 
 
 def read_data(filepath):

@@ -65,6 +65,7 @@ def modify(token, k):
     elif token == 'who':
         mod[k] = 'PERSON'
 
+
 # Used to get labels of training set and test set
 def get_labels(filename):
     labels = []
@@ -121,6 +122,7 @@ def classify(classifier_fn, X_test, Y_test = []):
         mapping = json.loads(file.read())
 
     result = []
+
     for label in labels_test:
         res = ''
         if label in mapping:

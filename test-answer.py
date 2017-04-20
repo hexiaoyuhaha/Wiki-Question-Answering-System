@@ -68,8 +68,8 @@ def generate_evaluation_files():
 
 
 def test_answer():
-    article_file_path = 'S10/article/Alessandro_Volta.txt'
-    question_file_path = 'Ales.ques.txt'   # 'S10/article/Alessandro_Volta_question.txt'
+    article_file_path = 'S10/article/Berlin.txt'
+    question_file_path = 'ques1.txt'   # 'S10/article/Alessandro_Volta_question.txt'
     argv = ['', article_file_path, question_file_path]
     answer.main(argv)
 

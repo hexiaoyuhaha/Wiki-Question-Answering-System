@@ -10,6 +10,8 @@ from settings import verbose
 
 ps = PorterStemmer()
 
+percent_map = set(['what', 'when', 'where', 'who', 'how many', 'how much', 'how', 'why', 'do', 'are', 'have', 'did', 'does', 'were', 'was', 'is', 'had', 'has'])
+
 
 class SearchEngine:
     """
@@ -70,7 +72,8 @@ class SearchEngine:
         '''
         # stem the query. Remove the first token
         qargs = [ps.stem(word) for word in wordpunct_tokenize(query)] # wordpunct_tokenize(query)
-        qargs = qargs[1:]
+        if qargs[0] in percent_map:
+            qargs = qargs[1:]
 
         result = defaultdict(float)
         if verbose:
@@ -89,7 +92,7 @@ class SearchEngine:
                     result[sentid] = 1.0
                 if sentid in sents:
                     sent_len = sents[sentid][0]
-                    tf = sents[sentid][1]
+                    tf = min(sents[sentid][1], 2)
                     result[sentid] *= (1 - self.myLambda) * (tf + self.myMu * mle) / (sent_len + self.myMu) + self.myLambda * mle
                 else:
                     sent_len = len(tb(s.strip()).words)

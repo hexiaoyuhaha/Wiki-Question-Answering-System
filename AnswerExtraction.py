@@ -1,3 +1,5 @@
+import codecs
+
 import spacy
 from AnswerExtractionYesNo import get_yes_no_answer
 from settings import verbose
@@ -31,7 +33,7 @@ def get_ner_token_pair(text):
     return result
 
 
-def get_NER_answer(potent_types, retrieved_passage):
+def get_when_answer(potent_types, retrieved_passage):
     '''
     Get corresponding answer phrase using the NER tag
     :param list potent_types: Identify a phrase as answer as long as it is one of the potent_types
@@ -45,6 +47,24 @@ def get_NER_answer(potent_types, retrieved_passage):
         for ner, token in ner_token_pair:
             if ner in potent_types:
                 return token
+    return retrieved_passage
+
+def get_where_answer(potent_types, question, retrieved_passage):
+    '''
+    Get corresponding answer phrase using the NER tag
+    :param list potent_types: Identify a phrase as answer as long as it is one of the potent_types
+    :param string retrieved_passage:
+    :return:
+    '''
+    ner_token_pair = get_ner_token_pair(unicode(retrieved_passage))
+    if verbose:
+        print 'NER token Passege:',ner_token_pair
+
+    if ner_token_pair:
+        for ner, token in ner_token_pair:
+            if ner in potent_types and token not in question:
+                return token
+
     return retrieved_passage
 
 
@@ -77,10 +97,10 @@ def get_answer(question, expected_type, retrieved_passage):
         return retrieved_passage
     elif question.lower().strip().startswith("where"):  # expected_type in location_types
         potent_types = location_types
-        return get_NER_answer(potent_types, retrieved_passage)
+        return get_where_answer(potent_types, question, retrieved_passage)
     elif question.lower().strip().startswith("when"):  # expected_type in date_types
         potent_types = date_types
-        return get_NER_answer(potent_types, retrieved_passage)
+        return get_when_answer(potent_types, retrieved_passage)
     elif question.lower().strip().startswith("who"):  # expected_type in person_types 
         return retrieved_passage
     else:
@@ -92,7 +112,7 @@ def get_answer(question, expected_type, retrieved_passage):
 
 if __name__ == '__main__':
     filepath = "data/AnsEx_train_where.txt"
-    with open(filepath) as infile:
+    with codecs.open(filepath, encoding='utf-8', errors='replace') as infile:
         lines = infile.readlines()
         train_data = [(line.split('\t')[1].strip(), line.split('\t')[2].strip())
                 for line in lines if 'NULL' not in line]

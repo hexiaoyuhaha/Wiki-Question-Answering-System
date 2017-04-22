@@ -19,10 +19,17 @@ nlp = spacy.load('en')
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
-VERBOSE = False
+VERBOSE = True
 # initialize logger
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
+hdlr = logging.FileHandler('logging.txt')
+formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
+hdlr.setFormatter(formatter)
+logger.addHandler(hdlr)
+#logger.setLevel(logging.INFO)
+
+
 
 
 APPO = "APPOSITION"
@@ -363,6 +370,8 @@ def ques_word_from_pp2(pp2, vp):
 
 def generate_question(res):
     simpleSent, np, vp, vp_tags, pp1, pp2, head_verb, head_verb_tag, head_noun_tag, reason = res['simpleSent'], res['np'], res['vp'], res['vp_tags'], res['pp1'], res['pp2'],res['head_verb'],res['head_verb_tag'], res['head_noun_tag'], res['reason']
+    if VERBOSE:
+        logger.info('ORIGINAL %s' % simpleSent)
     doc = nlp(simpleSent)
     # generate question where question word is from subject
     qw_res, subj_pron = ques_word_from_subject(np, doc)

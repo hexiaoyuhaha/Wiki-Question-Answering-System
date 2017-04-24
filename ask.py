@@ -97,12 +97,12 @@ def getSimpleSentence(text, pattern, TYPE):
     # else:
     ques = []
     for k,v in js.iteritems():
-        generateSimpleQues(v)
+        generateSimpleQues(v,text)
 
 
 
 
-def generateSimpleQues(js):
+def generateSimpleQues(js,text):
     if 'namedNodes' in js:
         js = js['namedNodes']
     # parse result
@@ -178,6 +178,7 @@ def generateSimpleQues(js):
     logger.debug('-'*100)
     logger.debug('SIMPLE SENT %s JSON %s' % (res['simpleSent'], str(js)))
     #generateQues(res)
+    res['originalSent']=text
     generate_question(res)
 
 
@@ -370,8 +371,9 @@ def ques_word_from_pp2(pp2, vp):
 
 def generate_question(res):
     simpleSent, np, vp, vp_tags, pp1, pp2, head_verb, head_verb_tag, head_noun_tag, reason = res['simpleSent'], res['np'], res['vp'], res['vp_tags'], res['pp1'], res['pp2'],res['head_verb'],res['head_verb_tag'], res['head_noun_tag'], res['reason']
+    originalSent = res['originalSent']
     if VERBOSE:
-        logger.info('ORIGINAL %s' % simpleSent)
+        logger.info('ORIGINAL %s' % originalSent)
     doc = nlp(simpleSent)
     # generate question where question word is from subject
     qw_res, subj_pron = ques_word_from_subject(np, doc)

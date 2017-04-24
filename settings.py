@@ -1,3 +1,3 @@
 
-verbose = False
+verbose = True
 

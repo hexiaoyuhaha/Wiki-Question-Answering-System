@@ -1,0 +1,969 @@
+ORIGINAL the city of Berlin consists of 95 such localities at present
+    QUE What consists of 95 such localities at present?
+        RETRIEVED At present the city of Berlin consists of 95 such localities.
+        MATCH-YES
+    QUE What does the city of Berlin consist of at present?
+        RETRIEVED Light snowfall mainly occurs from December through March, but snow cover does not usually remain for long.
+        MATCH-NO
+    QUE Does the city of Berlin consist of 95 such localities at present?
+        RETRIEVED At present the city of Berlin consists of 95 such localities.
+        MATCH-YES
+    QUE Does natural and consist of 95 such localities at present?
+        RETRIEVED At present the city of Berlin consists of 95 such localities.
+        MATCH-YES
+    QUE What consists of 95 such localities at present?
+        RETRIEVED At present the city of Berlin consists of 95 such localities.
+        MATCH-YES
+    QUE What does the city of Berlin consist of at present?
+        RETRIEVED Light snowfall mainly occurs from December through March, but snow cover does not usually remain for long.
+        MATCH-NO
+    QUE Does the city of Berlin consist of 95 such localities at present?
+        RETRIEVED At present the city of Berlin consists of 95 such localities.
+        MATCH-YES
+    QUE Does their cultural influence on the city consist of 95 such localities at present?
+        RETRIEVED At present the city of Berlin consists of 95 such localities.
+        MATCH-YES
+ORIGINAL the outskirts of Berlin are covered with woodlands and numerous lakes
+    QUE What are covered with woodlands and numerous lakes ?
+        RETRIEVED The outskirts of Berlin are covered with woodlands and numerous lakes
+        MATCH-YES
+    QUE What are the outskirts of Berlin covered with and numerous lakes ?
+        RETRIEVED The outskirts of Berlin are covered with woodlands and numerous lakes
+        MATCH-YES
+    QUE Are the outskirts of Berlin covered with woodlands and numerous lakes ?
+        RETRIEVED The outskirts of Berlin are covered with woodlands and numerous lakes
+        MATCH-YES
+    QUE Are the sectors of the western allies covered with woodlands and numerous lakes ?
+        RETRIEVED The outskirts of Berlin are covered with woodlands and numerous lakes
+        MATCH-YES
+    QUE What are covered with woodlands and numerous lakes ?
+        RETRIEVED The outskirts of Berlin are covered with woodlands and numerous lakes
+        MATCH-YES
+    QUE What are the outskirts of Berlin covered with and numerous lakes ?
+        RETRIEVED The outskirts of Berlin are covered with woodlands and numerous lakes
+        MATCH-YES
+    QUE Are the outskirts of Berlin covered with woodlands and numerous lakes ?
+        RETRIEVED The outskirts of Berlin are covered with woodlands and numerous lakes
+        MATCH-YES
+    QUE Are the victorious powers covered with woodlands and numerous lakes ?
+        RETRIEVED The outskirts of Berlin are covered with woodlands and numerous lakes
+        MATCH-YES
+ORIGINAL the earliest evidence of settlements in today 's Berlin central areas is a wooden beam dated from approximately 1192
+    QUE What is a wooden beam dated from approximately 1192 ?
+        RETRIEVED The earliest evidence of settlements in today's Berlin central areas is a wooden beam dated from approximately 1192.
+        MATCH-YES
+    QUE When is the earliest evidence of settlements in today 's Berlin central areas ?
+        RETRIEVED The earliest evidence of settlements in today's Berlin central areas is a wooden beam dated from approximately 1192.
+        MATCH-YES
+    QUE What is the earliest evidence of settlements in today 's Berlin central areas dated from approximately 1192 ?
+        RETRIEVED The earliest evidence of settlements in today's Berlin central areas is a wooden beam dated from approximately 1192.
+        MATCH-YES
+    QUE Is the earliest evidence of settlements in today 's Berlin central areas a wooden beam dated from approximately 1192 ?
+        RETRIEVED The earliest evidence of settlements in today's Berlin central areas is a wooden beam dated from approximately 1192.
+        MATCH-YES
+    QUE Is other industries a wooden beam dated from approximately 1192 ?
+        RETRIEVED The earliest evidence of settlements in today's Berlin central areas is a wooden beam dated from approximately 1192.
+        MATCH-YES
+    QUE What is a wooden beam dated from approximately 1192 ?
+        RETRIEVED The earliest evidence of settlements in today's Berlin central areas is a wooden beam dated from approximately 1192.
+        MATCH-YES
+    QUE When is the earliest evidence of settlements in today 's Berlin central areas ?
+        RETRIEVED The earliest evidence of settlements in today's Berlin central areas is a wooden beam dated from approximately 1192.
+        MATCH-YES
+    QUE What is the earliest evidence of settlements in today 's Berlin central areas dated from approximately 1192 ?
+        RETRIEVED The earliest evidence of settlements in today's Berlin central areas is a wooden beam dated from approximately 1192.
+        MATCH-YES
+    QUE Is the earliest evidence of settlements in today 's Berlin central areas a wooden beam dated from approximately 1192 ?
+        RETRIEVED The earliest evidence of settlements in today's Berlin central areas is a wooden beam dated from approximately 1192.
+        MATCH-YES
+    QUE Is the earliest evidence of settlements in today 's berlin central areas a wooden beam dated from approximately 1192 ?
+        RETRIEVED The earliest evidence of settlements in today's Berlin central areas is a wooden beam dated from approximately 1192.
+        MATCH-YES
+ORIGINAL Schloss Charlottenburg is the largest existing palace in Berlin
+    QUE Who is the largest existing palace in Berlin ?
+        RETRIEVED Schloss Charlottenburg is the largest existing palace in Berlin.
+        MATCH-YES
+    QUE What is the largest existing palace in Berlin ?
+        RETRIEVED Schloss Charlottenburg is the largest existing palace in Berlin.
+        MATCH-YES
+    QUE Where is Schloss Charlottenburg ?
+        RETRIEVED Schloss Charlottenburg is the largest existing palace in Berlin.
+        MATCH-YES
+    QUE What is Schloss Charlottenburg in Berlin ?
+        RETRIEVED Schloss Charlottenburg is the largest existing palace in Berlin.
+        MATCH-YES
+    QUE Is Schloss Charlottenburg the largest existing palace in Berlin ?
+        RETRIEVED Schloss Charlottenburg is the largest existing palace in Berlin.
+        MATCH-YES
+    QUE Is travel to west berlin or west germany the largest existing palace in Berlin ?
+        RETRIEVED The Berlin Philharmonic Orchestra is one of the preeminent orchestras in the world;  Is Rattle's Berlin honeymoon over?, The Guardian.
+        MATCH-NO
+    QUE Who is the largest existing palace in Berlin ?
+        RETRIEVED Schloss Charlottenburg is the largest existing palace in Berlin.
+        MATCH-YES
+    QUE What is the largest existing palace in Berlin ?
+        RETRIEVED Schloss Charlottenburg is the largest existing palace in Berlin.
+        MATCH-YES
+    QUE Where is Schloss Charlottenburg ?
+        RETRIEVED Schloss Charlottenburg is the largest existing palace in Berlin.
+        MATCH-YES
+    QUE What is Schloss Charlottenburg in Berlin ?
+        RETRIEVED Schloss Charlottenburg is the largest existing palace in Berlin.
+        MATCH-YES
+    QUE Is Schloss Charlottenburg the largest existing palace in Berlin ?
+        RETRIEVED Schloss Charlottenburg is the largest existing palace in Berlin.
+        MATCH-YES
+    QUE Is Lustgarten the largest existing palace in Berlin ?
+        RETRIEVED The Berlin Philharmonic Orchestra is one of the preeminent orchestras in the world;  Is Rattle's Berlin honeymoon over?, The Guardian.
+        MATCH-NO
+ORIGINAL the West German government established itself provisionally in Bonn
+    QUE What established itself provisionally in Bonn ?
+        RETRIEVED The West German government, meanwhile, established itself provisionally in Bonn.
+        MATCH-YES
+    QUE Where did the West German government establish ?
+        RETRIEVED       UnicodeEncodeError
+    QUE Did the West German government establish itself provisionally in Bonn ?
+        RETRIEVED The West German government, meanwhile, established itself provisionally in Bonn.
+        MATCH-YES
+    QUE Did the weimar republic establish itself provisionally in Bonn ?
+        RETRIEVED The West German government, meanwhile, established itself provisionally in Bonn.
+        MATCH-YES
+    QUE What established itself provisionally in Bonn ?
+        RETRIEVED The West German government, meanwhile, established itself provisionally in Bonn.
+        MATCH-YES
+    QUE Where did the West German government establish ?
+        RETRIEVED       UnicodeEncodeError
+    QUE Did the West German government establish itself provisionally in Bonn ?
+        RETRIEVED The West German government, meanwhile, established itself provisionally in Bonn.
+        MATCH-YES
+    QUE Did the west german government establish itself provisionally in Bonn ?
+        RETRIEVED The West German government, meanwhile, established itself provisionally in Bonn.
+        MATCH-YES
+ORIGINAL active immigration and asylum politics in West Berlin have initiated waves of immigrants in the 1960s and 1970s
+    QUE What have initiated waves of immigrants in the 1960s and 1970s ?
+        RETRIEVED Active immigration and asylum politics in West Berlin have initiated waves of immigrants in the 1960s and 1970s.
+        MATCH-YES
+    QUE When have active immigration and asylum politics in West Berlin initiated ?
+        RETRIEVED Active immigration and asylum politics in West Berlin have initiated waves of immigrants in the 1960s and 1970s.
+        MATCH-YES
+    QUE What have active immigration and asylum politics in West Berlin initiated of immigrants in the 1960s and 1970s ?
+        RETRIEVED Active immigration and asylum politics in West Berlin have initiated waves of immigrants in the 1960s and 1970s.
+        MATCH-YES
+    QUE Have active immigration and asylum politics in West Berlin initiated waves of immigrants in the 1960s and 1970s ?
+        RETRIEVED Active immigration and asylum politics in West Berlin have initiated waves of immigrants in the 1960s and 1970s.
+        MATCH-YES
+    QUE Have these areas initiated waves of immigrants in the 1960s and 1970s ?
+        RETRIEVED Active immigration and asylum politics in West Berlin have initiated waves of immigrants in the 1960s and 1970s.
+        MATCH-YES
+    QUE What have initiated waves of immigrants in the 1960s and 1970s ?
+        RETRIEVED Active immigration and asylum politics in West Berlin have initiated waves of immigrants in the 1960s and 1970s.
+        MATCH-YES
+    QUE When have active immigration and asylum politics in West Berlin initiated ?
+        RETRIEVED Active immigration and asylum politics in West Berlin have initiated waves of immigrants in the 1960s and 1970s.
+        MATCH-YES
+    QUE What have active immigration and asylum politics in West Berlin initiated of immigrants in the 1960s and 1970s ?
+        RETRIEVED Active immigration and asylum politics in West Berlin have initiated waves of immigrants in the 1960s and 1970s.
+        MATCH-YES
+    QUE Have active immigration and asylum politics in West Berlin initiated waves of immigrants in the 1960s and 1970s ?
+        RETRIEVED Active immigration and asylum politics in West Berlin have initiated waves of immigrants in the 1960s and 1970s.
+        MATCH-YES
+    QUE Have summers initiated waves of immigrants in the 1960s and 1970s ?
+        RETRIEVED Active immigration and asylum politics in West Berlin have initiated waves of immigrants in the 1960s and 1970s.
+        MATCH-YES
+ORIGINAL nazi rule destroyed Berlin 's Jewish community , which had numbered 170,000 before 1933
+    QUE What destroyed Berlin 's Jewish community , which had numbered 170,000 before 1933 ?
+        RETRIEVED Nazi rule destroyed Berlin's Jewish community, which had numbered 170,000 before 1933.
+        MATCH-YES
+    QUE Where did nazi rule destroy ?
+        RETRIEVED       UnicodeEncodeError
+    QUE When did nazi rule destroy ?
+        RETRIEVED       UnicodeEncodeError
+    QUE What did nazi rule destroy , which had numbered 170,000 before 1933 ?
+        RETRIEVED Nazi rule destroyed Berlin's Jewish community, which had numbered 170,000 before 1933.
+        MATCH-YES
+    QUE Did nazi rule destroy Berlin 's Jewish community , which had numbered 170,000 before 1933 ?
+        RETRIEVED Nazi rule destroyed Berlin's Jewish community, which had numbered 170,000 before 1933.
+        MATCH-YES
+    QUE Did the former destroy Berlin 's Jewish community , which had numbered 170,000 before 1933 ?
+        RETRIEVED Nazi rule destroyed Berlin's Jewish community, which had numbered 170,000 before 1933.
+        MATCH-YES
+    QUE What destroyed Berlin 's Jewish community , which had numbered 170,000 before 1933 ?
+        RETRIEVED Nazi rule destroyed Berlin's Jewish community, which had numbered 170,000 before 1933.
+        MATCH-YES
+    QUE Where did nazi rule destroy ?
+        RETRIEVED       UnicodeEncodeError
+    QUE When did nazi rule destroy ?
+        RETRIEVED       UnicodeEncodeError
+    QUE What did nazi rule destroy , which had numbered 170,000 before 1933 ?
+        RETRIEVED Nazi rule destroyed Berlin's Jewish community, which had numbered 170,000 before 1933.
+        MATCH-YES
+    QUE Did nazi rule destroy Berlin 's Jewish community , which had numbered 170,000 before 1933 ?
+        RETRIEVED Nazi rule destroyed Berlin's Jewish community, which had numbered 170,000 before 1933.
+        MATCH-YES
+    QUE Did berlin , across the spree in what is now called the nikolaiviertel , destroy Berlin 's Jewish community , which had numbered 170,000 before 1933 ?
+        RETRIEVED Nazi rule destroyed Berlin's Jewish community, which had numbered 170,000 before 1933.
+        MATCH-YES
+ORIGINAL the Haus der Kulturen der Welt presents various exhibitions dealing with intercultural issues and stages world music and conferences
+    QUE What presents various exhibitions dealing with intercultural issues and stages world music and conferences ?
+        RETRIEVED The Haus der Kulturen der Welt presents various exhibitions dealing with intercultural issues and stages world music and conferences.
+        MATCH-YES
+    QUE What does the Haus der Kulturen der Welt present dealing with intercultural issues and stages world music and conferences ?
+        RETRIEVED The Haus der Kulturen der Welt presents various exhibitions dealing with intercultural issues and stages world music and conferences.
+        MATCH-YES
+    QUE Does the Haus der Kulturen der Welt present various exhibitions dealing with intercultural issues and stages world music and conferences ?
+        RETRIEVED The Haus der Kulturen der Welt presents various exhibitions dealing with intercultural issues and stages world music and conferences.
+        MATCH-YES
+    QUE Does the senate of berlin present various exhibitions dealing with intercultural issues and stages world music and conferences ?
+        RETRIEVED The Haus der Kulturen der Welt presents various exhibitions dealing with intercultural issues and stages world music and conferences.
+        MATCH-YES
+ORIGINAL their cultural influence on the city was immense
+    QUE Whose cultural influence on the city was immense ?
+        RETRIEVED By 1700, approximately 20 percent of Berlin's residents were French, and their cultural influence on the city was immense.
+        MATCH-YES
+    QUE What was immense ?
+        RETRIEVED By 1700, approximately 20 percent of Berlin's residents were French, and their cultural influence on the city was immense.
+        MATCH-YES
+    QUE Was their cultural influence on the city immense ?
+        RETRIEVED By 1700, approximately 20 percent of Berlin's residents were French, and their cultural influence on the city was immense.
+        MATCH-YES
+    QUE Was the metropolis immense ?
+        RETRIEVED By 1700, approximately 20 percent of Berlin's residents were French, and their cultural influence on the city was immense.
+        MATCH-YES
+    QUE Whose cultural influence on the city was immense ?
+        RETRIEVED By 1700, approximately 20 percent of Berlin's residents were French, and their cultural influence on the city was immense.
+        MATCH-YES
+    QUE What was immense ?
+        RETRIEVED By 1700, approximately 20 percent of Berlin's residents were French, and their cultural influence on the city was immense.
+        MATCH-YES
+    QUE Was their cultural influence on the city immense ?
+        RETRIEVED By 1700, approximately 20 percent of Berlin's residents were French, and their cultural influence on the city was immense.
+        MATCH-YES
+    QUE Was west berlin immense ?
+        RETRIEVED By 1700, approximately 20 percent of Berlin's residents were French, and their cultural influence on the city was immense.
+        MATCH-YES
+ORIGINAL these buildings once housed distinct collections
+    QUE What once housed distinct collections ?
+        RETRIEVED While these buildings once housed distinct collections, the names of the buildings no longer necessarily correspond to the names of the collections they house.
+        MATCH-YES
+    QUE What did these buildings house housed ?
+        RETRIEVED While these buildings once housed distinct collections, the names of the buildings no longer necessarily correspond to the names of the collections they house.
+        MATCH-YES
+    QUE Did these buildings house housed distinct collections ?
+        RETRIEVED While these buildings once housed distinct collections, the names of the buildings no longer necessarily correspond to the names of the collections they house.
+        MATCH-YES
+    QUE Did the borough mayors house housed distinct collections ?
+        RETRIEVED While these buildings once housed distinct collections, the names of the buildings no longer necessarily correspond to the names of the collections they house.
+        MATCH-YES
+ORIGINAL 2.7 % of the population adhere to other Christian churches , and 8.8 % adhere to Islam / ref >
+    QUE How many percent of the population adhere to other Christian churches , and 8.8 % adhere to Islam / ref > ?
+        RETRIEVED 2.7% of the population adhere to other Christian churches, and 8.8 % adhere to Islam  /ref>.
+        MATCH-YES
+    QUE What adhere to other Christian churches , and 8.8 % adhere to Islam / ref > ?
+        RETRIEVED 2.7% of the population adhere to other Christian churches, and 8.8 % adhere to Islam  /ref>.
+        MATCH-YES
+    QUE 2.7 % of the population adhere to other Christian churches , and how many percent adhere to Islam / ref > ?
+        RETRIEVED 2.7% of the population adhere to other Christian churches, and 8.8 % adhere to Islam  /ref>.
+        MATCH-YES
+    QUE What does 2.7 % of the population adhere to , and 8.8 % adhere to Islam / ref > ?
+        RETRIEVED 2.7% of the population adhere to other Christian churches, and 8.8 % adhere to Islam  /ref>.
+        MATCH-YES
+    QUE Does 2.7 % of the population adhere to other Christian churches , and 8.8 % adhere to Islam / ref > ?
+        RETRIEVED 2.7% of the population adhere to other Christian churches, and 8.8 % adhere to Islam  /ref>.
+        MATCH-YES
+    QUE Does the berliner dom , a protestant cathedral and the third church on this site , adhere to other Christian churches , and 8.8 % adhere to Islam / ref > ?
+        RETRIEVED 2.7% of the population adhere to other Christian churches, and 8.8 % adhere to Islam  /ref>.
+        MATCH-YES
+    QUE How many percent of the population adhere to other Christian churches , and 8.8 % adhere to Islam / ref > ?
+        RETRIEVED 2.7% of the population adhere to other Christian churches, and 8.8 % adhere to Islam  /ref>.
+        MATCH-YES
+    QUE What adhere to other Christian churches , and 8.8 % adhere to Islam / ref > ?
+        RETRIEVED 2.7% of the population adhere to other Christian churches, and 8.8 % adhere to Islam  /ref>.
+        MATCH-YES
+    QUE 2.7 % of the population adhere to other Christian churches , and how many percent adhere to Islam / ref > ?
+        RETRIEVED 2.7% of the population adhere to other Christian churches, and 8.8 % adhere to Islam  /ref>.
+        MATCH-YES
+    QUE What does 2.7 % of the population adhere to , and 8.8 % adhere to Islam / ref > ?
+        RETRIEVED 2.7% of the population adhere to other Christian churches, and 8.8 % adhere to Islam  /ref>.
+        MATCH-YES
+    QUE Does 2.7 % of the population adhere to other Christian churches , and 8.8 % adhere to Islam / ref > ?
+        RETRIEVED 2.7% of the population adhere to other Christian churches, and 8.8 % adhere to Islam  /ref>.
+        MATCH-YES
+    QUE Does the european union adhere to other Christian churches , and 8.8 % adhere to Islam / ref > ?
+        RETRIEVED 2.7% of the population adhere to other Christian churches, and 8.8 % adhere to Islam  /ref>.
+        MATCH-YES
+ORIGINAL Ich bin ein Berliner
+    QUE What ein Berliner ?
+        RETRIEVED * "Ich bin ein Berliner."
+        MATCH-YES
+    QUE Who do Ich bin ein ?
+        RETRIEVED * "Ich bin ein Berliner."
+        MATCH-YES
+    QUE Do Ich bin ein Berliner ?
+        RETRIEVED * "Ich bin ein Berliner."
+        MATCH-YES
+    QUE Do the fivb world tour ein Berliner ?
+        RETRIEVED * "Ich bin ein Berliner."
+        MATCH-YES
+ORIGINAL Daimler manufactures cars
+    QUE What manufactures cars ?
+        RETRIEVED Daimler manufactures cars, and BMW builds motorcycles in Berlin.
+        MATCH-YES
+    QUE What does Daimler manufacture ?
+        RETRIEVED Daimler manufactures cars, and BMW builds motorcycles in Berlin.
+        MATCH-YES
+    QUE Does Daimler manufacture cars ?
+        RETRIEVED Daimler manufactures cars, and BMW builds motorcycles in Berlin.
+        MATCH-YES
+    QUE Does Berliner Stadtschloss manufacture cars ?
+        RETRIEVED Daimler manufactures cars, and BMW builds motorcycles in Berlin.
+        MATCH-YES
+    QUE What manufactures cars ?
+        RETRIEVED Daimler manufactures cars, and BMW builds motorcycles in Berlin.
+        MATCH-YES
+    QUE What does Daimler manufacture ?
+        RETRIEVED Daimler manufactures cars, and BMW builds motorcycles in Berlin.
+        MATCH-YES
+Count: 100, right count: 54
+Accuracy: 0.54
+    QUE Does Daimler manufacture cars ?
+        RETRIEVED Daimler manufactures cars, and BMW builds motorcycles in Berlin.
+        MATCH-YES
+    QUE Does an avenue manufacture cars ?
+        RETRIEVED Daimler manufactures cars, and BMW builds motorcycles in Berlin.
+        MATCH-YES
+ORIGINAL travel to West Berlin or West Germany was no longer possible for most Easterners
+    QUE What was no longer possible for most Easterners?
+        RETRIEVED For most Easterners, travel to West Berlin or West Germany was no longer possible.
+        MATCH-YES
+    QUE Was travel to West Berlin or West Germany no longer possible for most Easterners?
+        RETRIEVED For most Easterners, travel to West Berlin or West Germany was no longer possible.
+        MATCH-YES
+    QUE Was the industrial revolution no longer possible for most Easterners?
+        RETRIEVED For most Easterners, travel to West Berlin or West Germany was no longer possible.
+        MATCH-YES
+    QUE What was no longer possible for most Easterners?
+        RETRIEVED For most Easterners, travel to West Berlin or West Germany was no longer possible.
+        MATCH-YES
+    QUE Was travel to West Berlin or West Germany no longer possible for most Easterners?
+        RETRIEVED For most Easterners, travel to West Berlin or West Germany was no longer possible.
+        MATCH-YES
+    QUE Was frederick william no longer possible for most Easterners?
+        RETRIEVED For most Easterners, travel to West Berlin or West Germany was no longer possible.
+        MATCH-YES
+ORIGINAL Berlin has developed a highly complex transportation infrastructure providing very diverse modes of urban mobility
+    QUE What has developed a highly complex transportation infrastructure providing very diverse modes of urban mobility ?
+        RETRIEVED Berlin has developed a highly complex transportation infrastructure providing very diverse modes of urban mobility.
+        MATCH-YES
+    QUE What has Berlin developed infrastructure providing very diverse modes of urban mobility ?
+        RETRIEVED Berlin has developed a highly complex transportation infrastructure providing very diverse modes of urban mobility.
+        MATCH-YES
+    QUE Has Berlin developed a highly complex transportation infrastructure providing very diverse modes of urban mobility ?
+        RETRIEVED Berlin has developed a highly complex transportation infrastructure providing very diverse modes of urban mobility.
+        MATCH-YES
+    QUE Has the bundesrat of germany and developed a highly complex transportation infrastructure providing very diverse modes of urban mobility ?
+        RETRIEVED Berlin has developed a highly complex transportation infrastructure providing very diverse modes of urban mobility.
+        MATCH-YES
+ORIGINAL summers are warm with average high temperatures of 2225C and lows of 1214C -LRB- mid 50s F -RRB-
+    QUE What are warm with average high temperatures of 2225C and lows of 1214C (mid 50s F) ?
+        RETRIEVED       UnicodeEncodeError
+    QUE How many (are summers ?
+        RETRIEVED Together they serve 155 destinations  in 48 countries (summer 2009).
+        MATCH-NO
+    QUE Summers are warm with average high temperatures of 2225C and lows of how many (mid 50s F) ?
+        RETRIEVED       UnicodeEncodeError
+    QUE What are summers of 2225C and lows of 1214C (mid 50s F) ?
+        RETRIEVED       UnicodeEncodeError
+    QUE Are summers warm with average high temperatures of 2225C and lows of 1214C (mid 50s F) ?
+        RETRIEVED       UnicodeEncodeError
+    QUE Are the earliest evidence of settlements in today 's berlin central areas warm with average high temperatures of 2225C and lows of 1214C (mid 50s F) ?
+        RETRIEVED       UnicodeEncodeError
+    QUE What are warm with average high temperatures of 2225C and lows of 1214C (mid 50s F) ?
+        RETRIEVED       UnicodeEncodeError
+    QUE How many (are summers ?
+        RETRIEVED Together they serve 155 destinations  in 48 countries (summer 2009).
+        MATCH-NO
+    QUE Summers are warm with average high temperatures of 2225C and lows of how many (mid 50s F) ?
+        RETRIEVED       UnicodeEncodeError
+    QUE What are summers of 2225C and lows of 1214C (mid 50s F) ?
+        RETRIEVED       UnicodeEncodeError
+    QUE Are summers warm with average high temperatures of 2225C and lows of 1214C (mid 50s F) ?
+        RETRIEVED       UnicodeEncodeError
+    QUE Are the twin cities warm with average high temperatures of 2225C and lows of 1214C (mid 50s F) ?
+        RETRIEVED       UnicodeEncodeError
+ORIGINAL cafs are part of the city 's bohemian and hipster lifestyle
+    QUE What are part of the city 's bohemian and hipster lifestyle ?
+        RETRIEVED       UnicodeEncodeError
+    QUE What are cafs of the city 's bohemian and hipster lifestyle ?
+        RETRIEVED       UnicodeEncodeError
+    QUE Are cafs part of the city 's bohemian and hipster lifestyle ?
+        RETRIEVED       UnicodeEncodeError
+    QUE Are Berliner Dom part of the city 's bohemian and hipster lifestyle ?
+        RETRIEVED       UnicodeEncodeError
+ORIGINAL the Greater Berlin Act united dozens of suburban cities , villages , and estates around Berlin into a greatly expanded city at the expense of Brandenburg in 1920
+    QUE What united dozens of suburban cities , villages , and estates around Berlin into a greatly expanded city at the expense of Brandenburg in 1920?
+        RETRIEVED In 1920, the Greater Berlin Act united dozens of suburban cities, villages, and estates around Berlin into a greatly expanded city at the expense of Brandenburg.
+        MATCH-YES
+    QUE When did the Greater Berlin Act unite dozens of suburban cities , villages , and estates around Berlin into a greatly expanded city at the expense of Brandenburg?
+        RETRIEVED In 1920, the Greater Berlin Act united dozens of suburban cities, villages, and estates around Berlin into a greatly expanded city at the expense of Brandenburg.
+        MATCH-YES
+    QUE Where did the Greater Berlin Act unite in 1920?
+        RETRIEVED In 1920, the Greater Berlin Act united dozens of suburban cities, villages, and estates around Berlin into a greatly expanded city at the expense of Brandenburg.
+        MATCH-YES
+    QUE Where did the Greater Berlin Act unite in 1920?
+        RETRIEVED In 1920, the Greater Berlin Act united dozens of suburban cities, villages, and estates around Berlin into a greatly expanded city at the expense of Brandenburg.
+        MATCH-YES
+    QUE What did the Greater Berlin Act unite of suburban cities , villages , and estates around Berlin into a greatly expanded city at the expense of Brandenburg in 1920?
+        RETRIEVED In 1920, the Greater Berlin Act united dozens of suburban cities, villages, and estates around Berlin into a greatly expanded city at the expense of Brandenburg.
+        MATCH-YES
+    QUE Did the Greater Berlin Act unite dozens of suburban cities , villages , and estates around Berlin into a greatly expanded city at the expense of Brandenburg in 1920?
+        RETRIEVED In 1920, the Greater Berlin Act united dozens of suburban cities, villages, and estates around Berlin into a greatly expanded city at the expense of Brandenburg.
+        MATCH-YES
+    QUE Did the greater berlin act unite dozens of suburban cities , villages , and estates around Berlin into a greatly expanded city at the expense of Brandenburg in 1920?
+        RETRIEVED In 1920, the Greater Berlin Act united dozens of suburban cities, villages, and estates around Berlin into a greatly expanded city at the expense of Brandenburg.
+        MATCH-YES
+    QUE What united dozens of suburban cities , villages , and estates around Berlin into a greatly expanded city at the expense of Brandenburg in 1920?
+        RETRIEVED In 1920, the Greater Berlin Act united dozens of suburban cities, villages, and estates around Berlin into a greatly expanded city at the expense of Brandenburg.
+        MATCH-YES
+    QUE When did the Greater Berlin Act unite dozens of suburban cities , villages , and estates around Berlin into a greatly expanded city at the expense of Brandenburg?
+        RETRIEVED In 1920, the Greater Berlin Act united dozens of suburban cities, villages, and estates around Berlin into a greatly expanded city at the expense of Brandenburg.
+        MATCH-YES
+    QUE Where did the Greater Berlin Act unite in 1920?
+        RETRIEVED In 1920, the Greater Berlin Act united dozens of suburban cities, villages, and estates around Berlin into a greatly expanded city at the expense of Brandenburg.
+        MATCH-YES
+    QUE Where did the Greater Berlin Act unite in 1920?
+        RETRIEVED In 1920, the Greater Berlin Act united dozens of suburban cities, villages, and estates around Berlin into a greatly expanded city at the expense of Brandenburg.
+        MATCH-YES
+    QUE What did the Greater Berlin Act unite of suburban cities , villages , and estates around Berlin into a greatly expanded city at the expense of Brandenburg in 1920?
+        RETRIEVED In 1920, the Greater Berlin Act united dozens of suburban cities, villages, and estates around Berlin into a greatly expanded city at the expense of Brandenburg.
+        MATCH-YES
+    QUE Did the Greater Berlin Act unite dozens of suburban cities , villages , and estates around Berlin into a greatly expanded city at the expense of Brandenburg in 1920?
+        RETRIEVED In 1920, the Greater Berlin Act united dozens of suburban cities, villages, and estates around Berlin into a greatly expanded city at the expense of Brandenburg.
+        MATCH-YES
+    QUE Did the weimar republic unite dozens of suburban cities , villages , and estates around Berlin into a greatly expanded city at the expense of Brandenburg in 1920?
+        RETRIEVED In 1920, the Greater Berlin Act united dozens of suburban cities, villages, and estates around Berlin into a greatly expanded city at the expense of Brandenburg.
+        MATCH-YES
+ORIGINAL the Brandenburg Gate is an iconic landmark of Berlin and Germany
+    QUE What is an iconic landmark of Berlin and Germany ?
+        RETRIEVED The Brandenburg Gate is an iconic landmark of Berlin and Germany.
+        MATCH-YES
+    QUE Where is the Brandenburg Gate ?
+        RETRIEVED       UnicodeEncodeError
+    QUE Where is the Brandenburg Gate ?
+        RETRIEVED       UnicodeEncodeError
+    QUE What is the Brandenburg Gate of Berlin and Germany ?
+        RETRIEVED The Brandenburg Gate is an iconic landmark of Berlin and Germany.
+        MATCH-YES
+    QUE Is the Brandenburg Gate an iconic landmark of Berlin and Germany ?
+        RETRIEVED The Brandenburg Gate is an iconic landmark of Berlin and Germany.
+        MATCH-YES
+    QUE Is Mary an iconic landmark of Berlin and Germany ?
+        RETRIEVED The Brandenburg Gate is an iconic landmark of Berlin and Germany.
+        MATCH-YES
+    QUE What is an iconic landmark of Berlin and Germany ?
+        RETRIEVED The Brandenburg Gate is an iconic landmark of Berlin and Germany.
+        MATCH-YES
+    QUE Where is the Brandenburg Gate ?
+        RETRIEVED       UnicodeEncodeError
+    QUE Where is the Brandenburg Gate ?
+        RETRIEVED       UnicodeEncodeError
+    QUE What is the Brandenburg Gate of Berlin and Germany ?
+        RETRIEVED The Brandenburg Gate is an iconic landmark of Berlin and Germany.
+        MATCH-YES
+    QUE Is the Brandenburg Gate an iconic landmark of Berlin and Germany ?
+        RETRIEVED The Brandenburg Gate is an iconic landmark of Berlin and Germany.
+        MATCH-YES
+    QUE Is frederick william , known as the great elector , who had succeeded his father george william as ruler in 1640 , an iconic landmark of Berlin and Germany ?
+        RETRIEVED       UnicodeEncodeError
+ORIGINAL Berlin 's Botanischer Garten includes the Botanic Museum Berlin
+    QUE What includes the Botanic Museum Berlin ?
+        RETRIEVED Berlin's Botanischer Garten includes the Botanic Museum Berlin.
+        MATCH-YES
+    QUE Does Berlin 's Botanischer Garten include the Botanic Museum Berlin ?
+        RETRIEVED Berlin's Botanischer Garten includes the Botanic Museum Berlin.
+        MATCH-YES
+    QUE Does town twinning between berlin and other cities include the Botanic Museum Berlin ?
+        RETRIEVED Berlin's Botanischer Garten includes the Botanic Museum Berlin.
+        MATCH-YES
+ORIGINAL long-distance rail lines connect Berlin with all of the major cities of Germany and with many cities in neighboring European countries
+    QUE What connect Berlin with all of the major cities of Germany and with many cities in neighboring European countries ?
+        RETRIEVED Long-distance rail lines connect Berlin with all of the major cities of Germany and with many cities in neighboring European countries.
+        MATCH-YES
+    QUE Where do long-distance rail lines connect ?
+        RETRIEVED Long-distance rail lines connect Berlin with all of the major cities of Germany and with many cities in neighboring European countries.
+        MATCH-YES
+    QUE Where do long-distance rail lines connect ?
+        RETRIEVED Long-distance rail lines connect Berlin with all of the major cities of Germany and with many cities in neighboring European countries.
+        MATCH-YES
+    QUE Do long-distance rail lines connect Berlin with all of the major cities of Germany and with many cities in neighboring European countries ?
+        RETRIEVED Long-distance rail lines connect Berlin with all of the major cities of Germany and with many cities in neighboring European countries.
+        MATCH-YES
+    QUE Do schools connect Berlin with all of the major cities of Germany and with many cities in neighboring European countries ?
+        RETRIEVED Long-distance rail lines connect Berlin with all of the major cities of Germany and with many cities in neighboring European countries.
+        MATCH-YES
+ORIGINAL the prestigious Berlin Film Festival is annually held in February
+    QUE What is annually held in February ?
+        RETRIEVED The prestigious Berlin Film Festival is annually held in February.
+        MATCH-YES
+    QUE When is the prestigious Berlin Film Festival ?
+        RETRIEVED The prestigious Berlin Film Festival is annually held in February.
+        MATCH-YES
+    QUE Is the prestigious Berlin Film Festival annually held in February ?
+        RETRIEVED The prestigious Berlin Film Festival is annually held in February.
+        MATCH-YES
+    QUE Is schloss charlottenburg annually held in February ?
+        RETRIEVED The Berlin Philharmonic Orchestra is one of the preeminent orchestras in the world;  Is Rattle's Berlin honeymoon over?, The Guardian.
+        MATCH-NO
+    QUE What is annually held in February ?
+        RETRIEVED The prestigious Berlin Film Festival is annually held in February.
+        MATCH-YES
+    QUE When is the prestigious Berlin Film Festival ?
+        RETRIEVED The prestigious Berlin Film Festival is annually held in February.
+        MATCH-YES
+    QUE Is the prestigious Berlin Film Festival annually held in February ?
+        RETRIEVED The prestigious Berlin Film Festival is annually held in February.
+        MATCH-YES
+    QUE Is the area around hackescher markt annually held in February ?
+        RETRIEVED The Berlin Philharmonic Orchestra is one of the preeminent orchestras in the world;  Is Rattle's Berlin honeymoon over?, The Guardian.
+        MATCH-NO
+ORIGINAL the metropolis is home to world-renowned universities , research institutes , sporting events , orchestras , museums and personalities
+    QUE What is home to world-renowned universities , research institutes , sporting events , orchestras , museums and personalities ?
+        RETRIEVED The metropolis is home to world-renowned universities, research institutes, sporting events, orchestras, museums and personalities.
+        MATCH-YES
+    QUE What is the metropolis to world-renowned universities , research institutes , sporting events , orchestras , museums and personalities ?
+        RETRIEVED The metropolis is home to world-renowned universities, research institutes, sporting events, orchestras, museums and personalities.
+        MATCH-YES
+    QUE Is the metropolis home to world-renowned universities , research institutes , sporting events , orchestras , museums and personalities ?
+        RETRIEVED The metropolis is home to world-renowned universities, research institutes, sporting events, orchestras, museums and personalities.
+        MATCH-YES
+    QUE Is west berlin home to world-renowned universities , research institutes , sporting events , orchestras , museums and personalities ?
+        RETRIEVED The metropolis is home to world-renowned universities, research institutes, sporting events, orchestras, museums and personalities.
+        MATCH-YES
+    QUE What is home to world-renowned universities , research institutes , sporting events , orchestras , museums and personalities ?
+        RETRIEVED The metropolis is home to world-renowned universities, research institutes, sporting events, orchestras, museums and personalities.
+        MATCH-YES
+    QUE What is the metropolis to world-renowned universities , research institutes , sporting events , orchestras , museums and personalities ?
+        RETRIEVED The metropolis is home to world-renowned universities, research institutes, sporting events, orchestras, museums and personalities.
+        MATCH-YES
+    QUE Is the metropolis home to world-renowned universities , research institutes , sporting events , orchestras , museums and personalities ?
+        RETRIEVED The metropolis is home to world-renowned universities, research institutes, sporting events, orchestras, museums and personalities.
+        MATCH-YES
+    QUE Is east berlin home to world-renowned universities , research institutes , sporting events , orchestras , museums and personalities ?
+        RETRIEVED The metropolis is home to world-renowned universities, research institutes, sporting events, orchestras, museums and personalities.
+        MATCH-YES
+ORIGINAL the Altes Museum in the Lustgarten displaying the bust of Queen Nefertiti , A 3,000-year-old smile , Expatica.Com
+    QUE Who displaying the bust of Queen Nefertiti , A 3,000-year-old smile , Expatica.Com ?
+        RETRIEVED Subsequently, the Altes Museum (Old Museum) in the Lustgarten displaying the bust of Queen Nefertiti,  A 3,000-year-old smile, Expatica.Com.
+        MATCH-YES
+    QUE What displaying the bust of Queen Nefertiti , A 3,000-year-old smile , Expatica.Com ?
+        RETRIEVED Subsequently, the Altes Museum (Old Museum) in the Lustgarten displaying the bust of Queen Nefertiti,  A 3,000-year-old smile, Expatica.Com.
+        MATCH-YES
+    QUE Who does the Altes Museum in the Lustgarten display ?
+        RETRIEVED Subsequently, the Altes Museum (Old Museum) in the Lustgarten displaying the bust of Queen Nefertiti,  A 3,000-year-old smile, Expatica.Com.
+        MATCH-YES
+    QUE When does the Altes Museum in the Lustgarten display ?
+        RETRIEVED Subsequently, the Altes Museum (Old Museum) in the Lustgarten displaying the bust of Queen Nefertiti,  A 3,000-year-old smile, Expatica.Com.
+        MATCH-YES
+    QUE Who does the Altes Museum in the Lustgarten display ?
+        RETRIEVED Subsequently, the Altes Museum (Old Museum) in the Lustgarten displaying the bust of Queen Nefertiti,  A 3,000-year-old smile, Expatica.Com.
+        MATCH-YES
+    QUE What does the Altes Museum in the Lustgarten display of Queen Nefertiti , A 3,000-year-old smile , Expatica.Com ?
+        RETRIEVED Subsequently, the Altes Museum (Old Museum) in the Lustgarten displaying the bust of Queen Nefertiti,  A 3,000-year-old smile, Expatica.Com.
+        MATCH-YES
+    QUE Does the Altes Museum in the Lustgarten display the bust of Queen Nefertiti , A 3,000-year-old smile , Expatica.Com ?
+        RETRIEVED Subsequently, the Altes Museum (Old Museum) in the Lustgarten displaying the bust of Queen Nefertiti,  A 3,000-year-old smile, Expatica.Com.
+        MATCH-YES
+    QUE Does thousands of the city 's german jews display the bust of Queen Nefertiti , A 3,000-year-old smile , Expatica.Com ?
+        RETRIEVED Subsequently, the Altes Museum (Old Museum) in the Lustgarten displaying the bust of Queen Nefertiti,  A 3,000-year-old smile, Expatica.Com.
+        MATCH-YES
+ORIGINAL the Borough Council is elected by the Borough Assembly -LRB- Bezirksverordnetenversammlung -RRB-
+    QUE What is elected by the Borough Assembly (Bezirksverordnetenversammlung) ?
+        RETRIEVED The Borough Council is elected by the Borough Assembly (Bezirksverordnetenversammlung).
+        MATCH-YES
+    QUE Is the Borough Council elected by the Borough Assembly (Bezirksverordnetenversammlung) ?
+        RETRIEVED The Borough Council is elected by the Borough Assembly (Bezirksverordnetenversammlung).
+        MATCH-YES
+    QUE Is natural and elected by the Borough Assembly (Bezirksverordnetenversammlung) ?
+        RETRIEVED The Borough Council is elected by the Borough Assembly (Bezirksverordnetenversammlung).
+        MATCH-YES
+    QUE What is elected by the Borough Assembly (Bezirksverordnetenversammlung) ?
+        RETRIEVED The Borough Council is elected by the Borough Assembly (Bezirksverordnetenversammlung).
+        MATCH-YES
+    QUE Is the Borough Council elected by the Borough Assembly (Bezirksverordnetenversammlung) ?
+        RETRIEVED The Borough Council is elected by the Borough Assembly (Bezirksverordnetenversammlung).
+        MATCH-YES
+    QUE Is Berliner Stadtschloss elected by the Borough Assembly (Bezirksverordnetenversammlung) ?
+        RETRIEVED The Borough Council is elected by the Borough Assembly (Bezirksverordnetenversammlung).
+        MATCH-YES
+ORIGINAL Berlin had to give up its status as a free Hanseatic city
+    QUE What had to give up its status as a free Hanseatic city ?
+        RETRIEVED In 1451 Berlin became the royal residence of the Brandenburg electors, and Berlin had to give up its status as a free Hanseatic city.
+        MATCH-YES
+    QUE Where had Berlin ?
+        RETRIEVED In 1451 Berlin became the royal residence of the Brandenburg electors, and Berlin had to give up its status as a free Hanseatic city.
+        MATCH-YES
+    QUE What had Berlin as a free Hanseatic city ?
+        RETRIEVED In 1451 Berlin became the royal residence of the Brandenburg electors, and Berlin had to give up its status as a free Hanseatic city.
+        MATCH-YES
+    QUE Had Berlin to give up its status as a free Hanseatic city ?
+        RETRIEVED In 1451 Berlin became the royal residence of the Brandenburg electors, and Berlin had to give up its status as a free Hanseatic city.
+        MATCH-YES
+    QUE Had his successor , frederick ii , to give up its status as a free Hanseatic city ?
+        RETRIEVED In 1451 Berlin became the royal residence of the Brandenburg electors, and Berlin had to give up its status as a free Hanseatic city.
+        MATCH-YES
+    QUE What had to give up its status as a free Hanseatic city ?
+        RETRIEVED In 1451 Berlin became the royal residence of the Brandenburg electors, and Berlin had to give up its status as a free Hanseatic city.
+        MATCH-YES
+    QUE Where had Berlin ?
+        RETRIEVED In 1451 Berlin became the royal residence of the Brandenburg electors, and Berlin had to give up its status as a free Hanseatic city.
+        MATCH-YES
+    QUE What had Berlin as a free Hanseatic city ?
+        RETRIEVED In 1451 Berlin became the royal residence of the Brandenburg electors, and Berlin had to give up its status as a free Hanseatic city.
+        MATCH-YES
+    QUE Had Berlin to give up its status as a free Hanseatic city ?
+        RETRIEVED In 1451 Berlin became the royal residence of the Brandenburg electors, and Berlin had to give up its status as a free Hanseatic city.
+        MATCH-YES
+    QUE Had document to give up its status as a free Hanseatic city ?
+        RETRIEVED In 1451 Berlin became the royal residence of the Brandenburg electors, and Berlin had to give up its status as a free Hanseatic city.
+        MATCH-YES
+ORIGINAL there is also a large Arab community , mostly from Palestine and Iraq
+    QUE What is also a large Arab community , mostly from Palestine and Iraq ?
+        RETRIEVED There is also a large Arab community, mostly from Palestine and Iraq, but there are no statistics about them, because they are often stateless.
+        MATCH-YES
+    QUE Where is there ?
+        RETRIEVED There is also a large Arab community, mostly from Palestine and Iraq, but there are no statistics about them, because they are often stateless.
+        MATCH-YES
+    QUE Where is there ?
+        RETRIEVED There is also a large Arab community, mostly from Palestine and Iraq, but there are no statistics about them, because they are often stateless.
+        MATCH-YES
+    QUE What is there , mostly from Palestine and Iraq ?
+        RETRIEVED There is also a large Arab community, mostly from Palestine and Iraq, but there are no statistics about them, because they are often stateless.
+        MATCH-YES
+    QUE Is there also a large Arab community , mostly from Palestine and Iraq ?
+        RETRIEVED There is also a large Arab community, mostly from Palestine and Iraq, but there are no statistics about them, because they are often stateless.
+        MATCH-YES
+    QUE Is clln on the fischerinsel also a large Arab community , mostly from Palestine and Iraq ?
+        RETRIEVED There is also a large Arab community, mostly from Palestine and Iraq, but there are no statistics about them, because they are often stateless.
+        MATCH-YES
+    QUE What is also a large Arab community , mostly from Palestine and Iraq ?
+        RETRIEVED There is also a large Arab community, mostly from Palestine and Iraq, but there are no statistics about them, because they are often stateless.
+        MATCH-YES
+    QUE Where is there ?
+        RETRIEVED There is also a large Arab community, mostly from Palestine and Iraq, but there are no statistics about them, because they are often stateless.
+        MATCH-YES
+    QUE Where is there ?
+        RETRIEVED There is also a large Arab community, mostly from Palestine and Iraq, but there are no statistics about them, because they are often stateless.
+        MATCH-YES
+    QUE What is there , mostly from Palestine and Iraq ?
+        RETRIEVED There is also a large Arab community, mostly from Palestine and Iraq, but there are no statistics about them, because they are often stateless.
+        MATCH-YES
+    QUE Is there also a large Arab community , mostly from Palestine and Iraq ?
+        RETRIEVED There is also a large Arab community, mostly from Palestine and Iraq, but there are no statistics about them, because they are often stateless.
+        MATCH-YES
+    QUE Is west of the center , schloss bellevue also a large Arab community , mostly from Palestine and Iraq ?
+        RETRIEVED There is also a large Arab community, mostly from Palestine and Iraq, but there are no statistics about them, because they are often stateless.
+        MATCH-YES
+ORIGINAL Berlin is also the headquarters of two major German-language publishing houses : Walter de Gruyter and Springer , each of which publishes books , periodicals , and multimedia products
+    QUE What is also the headquarters of two major German-language publishing houses : Walter de Gruyter and Springer , each of which publishes books , periodicals , and multimedia products ?
+        RETRIEVED Berlin is also the headquarters of two major German-language publishing houses: Walter de Gruyter and Springer, each of which publishes books, periodicals, and multimedia products.
+        MATCH-YES
+    QUE Who is Berlin ?
+        RETRIEVED The Berlin Philharmonic Orchestra is one of the preeminent orchestras in the world;  Is Rattle's Berlin honeymoon over?, The Guardian.
+        MATCH-NO
+    QUE Who is Berlin ?
+        RETRIEVED The Berlin Philharmonic Orchestra is one of the preeminent orchestras in the world;  Is Rattle's Berlin honeymoon over?, The Guardian.
+        MATCH-NO
+    QUE What is Berlin of two major German-language publishing houses : Walter de Gruyter and Springer , each of which publishes books , periodicals , and multimedia products ?
+        RETRIEVED Berlin is also the headquarters of two major German-language publishing houses: Walter de Gruyter and Springer, each of which publishes books, periodicals, and multimedia products.
+        MATCH-YES
+    QUE Is Berlin also the headquarters of two major German-language publishing houses : Walter de Gruyter and Springer , each of which publishes books , periodicals , and multimedia products ?
+        RETRIEVED Berlin is also the headquarters of two major German-language publishing houses: Walter de Gruyter and Springer, each of which publishes books, periodicals, and multimedia products.
+        MATCH-YES
+Count: 200, right count: 88
+Accuracy: 0.44
+    QUE Is a tree also the headquarters of two major German-language publishing houses : Walter de Gruyter and Springer , each of which publishes books , periodicals , and multimedia products ?
+        RETRIEVED Berlin is also the headquarters of two major German-language publishing houses: Walter de Gruyter and Springer, each of which publishes books, periodicals, and multimedia products.
+        MATCH-YES
+ORIGINAL the city regained its status as the capital of all Germany hosting 147 foreign embassies following German reunification in 1990
+    QUE What regained its status as the capital of all Germany hosting 147 foreign embassies following German reunification in 1990?
+        RETRIEVED Following German reunification in 1990, the city regained its status as the capital of all Germany hosting 147 foreign embassies.
+        MATCH-YES
+    QUE When did the city regain its status as the capital of all Germany hosting 147 foreign embassies?
+        RETRIEVED Following German reunification in 1990, the city regained its status as the capital of all Germany hosting 147 foreign embassies.
+        MATCH-YES
+    QUE Where did the city regain following German reunification in 1990?
+        RETRIEVED Following German reunification in 1990, the city regained its status as the capital of all Germany hosting 147 foreign embassies.
+        MATCH-YES
+    QUE What did the city regain as the capital of all Germany hosting 147 foreign embassies following German reunification in 1990?
+        RETRIEVED Following German reunification in 1990, the city regained its status as the capital of all Germany hosting 147 foreign embassies.
+        MATCH-YES
+    QUE Did the city regain its status as the capital of all Germany hosting 147 foreign embassies following German reunification in 1990?
+        RETRIEVED Following German reunification in 1990, the city regained its status as the capital of all Germany hosting 147 foreign embassies.
+        MATCH-YES
+    QUE Did the city regain its status as the capital of all Germany hosting 147 foreign embassies following German reunification in 1990?
+        RETRIEVED Following German reunification in 1990, the city regained its status as the capital of all Germany hosting 147 foreign embassies.
+        MATCH-YES
+    QUE What regained its status as the capital of all Germany hosting 147 foreign embassies following German reunification in 1990?
+        RETRIEVED Following German reunification in 1990, the city regained its status as the capital of all Germany hosting 147 foreign embassies.
+        MATCH-YES
+    QUE When did the city regain its status as the capital of all Germany hosting 147 foreign embassies?
+        RETRIEVED Following German reunification in 1990, the city regained its status as the capital of all Germany hosting 147 foreign embassies.
+        MATCH-YES
+    QUE Where did the city regain following German reunification in 1990?
+        RETRIEVED Following German reunification in 1990, the city regained its status as the capital of all Germany hosting 147 foreign embassies.
+        MATCH-YES
+    QUE What did the city regain as the capital of all Germany hosting 147 foreign embassies following German reunification in 1990?
+        RETRIEVED Following German reunification in 1990, the city regained its status as the capital of all Germany hosting 147 foreign embassies.
+        MATCH-YES
+    QUE Did the city regain its status as the capital of all Germany hosting 147 foreign embassies following German reunification in 1990?
+        RETRIEVED Following German reunification in 1990, the city regained its status as the capital of all Germany hosting 147 foreign embassies.
+        MATCH-YES
+    QUE Did east berlin regain its status as the capital of all Germany hosting 147 foreign embassies following German reunification in 1990?
+        RETRIEVED Following German reunification in 1990, the city regained its status as the capital of all Germany hosting 147 foreign embassies.
+        MATCH-YES
+ORIGINAL this has now become the backbone of the whole city 's power system
+    QUE What has now become the backbone of the whole city 's power system ?
+        RETRIEVED This has now become the backbone of the whole city's power system.
+        MATCH-YES
+    QUE What does this have of the whole city 's power system ?
+        RETRIEVED This has now become the backbone of the whole city's power system.
+        MATCH-YES
+    QUE Does this have now become the backbone of the whole city 's power system ?
+        RETRIEVED This has now become the backbone of the whole city's power system.
+        MATCH-YES
+    QUE Does the beate uhse erotic museum near zoo station have now become the backbone of the whole city 's power system ?
+        RETRIEVED This has now become the backbone of the whole city's power system.
+        MATCH-YES
+ORIGINAL Berlin has Germany 's largest number of daily newspapers , with numerous local broadsheets -LRB- Berliner Morgenpost , Berliner Zeitung , Der Tagesspiegel -RRB- , and three major tabloids , as well as national dailies of varying sizes , each with a different political affiliation , such as Die Welt , Junge Welt , Neues Deutschland , and Die Tageszeitung
+    QUE What has Germany 's largest number of daily newspapers , with numerous local broadsheets (Berliner Morgenpost , Berliner Zeitung , Der Tagesspiegel) , and three major tabloids , as well as national dailies of varying sizes , each with a different political affiliation , such as Die Welt , Junge Welt , Neues Deutschland , and Die Tageszeitung ?
+        RETRIEVED Berlin has Germany's largest number of daily newspapers, with numerous local broadsheets (Berliner Morgenpost, Berliner Zeitung, Der Tagesspiegel), and three major tabloids, as well as national dailies of varying sizes, each with a different political affiliation, such as Die Welt, Junge Welt, Neues Deutschland, and Die Tageszeitung.
+        MATCH-YES
+    QUE Where does Berlin have ?
+        RETRIEVED Light snowfall mainly occurs from December through March, but snow cover does not usually remain for long.
+        MATCH-NO
+    QUE When does Berlin have ?
+        RETRIEVED Light snowfall mainly occurs from December through March, but snow cover does not usually remain for long.
+        MATCH-NO
+    QUE Who does Berlin have ?
+        RETRIEVED Light snowfall mainly occurs from December through March, but snow cover does not usually remain for long.
+        MATCH-NO
+    QUE Who does Berlin have ?
+        RETRIEVED Light snowfall mainly occurs from December through March, but snow cover does not usually remain for long.
+        MATCH-NO
+    QUE Who does Berlin have ?
+        RETRIEVED Light snowfall mainly occurs from December through March, but snow cover does not usually remain for long.
+        MATCH-NO
+    QUE Who does Berlin have ?
+        RETRIEVED Light snowfall mainly occurs from December through March, but snow cover does not usually remain for long.
+        MATCH-NO
+    QUE What does Berlin have of daily newspapers , with numerous local broadsheets (Berliner Morgenpost , Berliner Zeitung , Der Tagesspiegel) , and three major tabloids , as well as national dailies of varying sizes , each with a different political affiliation , such as Die Welt , Junge Welt , Neues Deutschland , and Die Tageszeitung ?
+        RETRIEVED Berlin has Germany's largest number of daily newspapers, with numerous local broadsheets (Berliner Morgenpost, Berliner Zeitung, Der Tagesspiegel), and three major tabloids, as well as national dailies of varying sizes, each with a different political affiliation, such as Die Welt, Junge Welt, Neues Deutschland, and Die Tageszeitung.
+        MATCH-YES
+    QUE Does Berlin have Germany 's largest number of daily newspapers , with numerous local broadsheets (Berliner Morgenpost , Berliner Zeitung , Der Tagesspiegel) , and three major tabloids , as well as national dailies of varying sizes , each with a different political affiliation , such as Die Welt , Junge Welt , Neues Deutschland , and Die Tageszeitung ?
+        RETRIEVED Berlin has Germany's largest number of daily newspapers, with numerous local broadsheets (Berliner Morgenpost, Berliner Zeitung, Der Tagesspiegel), and three major tabloids, as well as national dailies of varying sizes, each with a different political affiliation, such as Die Welt, Junge Welt, Neues Deutschland, and Die Tageszeitung.
+        MATCH-YES
+    QUE Does the teufelsberg have Germany 's largest number of daily newspapers , with numerous local broadsheets (Berliner Morgenpost , Berliner Zeitung , Der Tagesspiegel) , and three major tabloids , as well as national dailies of varying sizes , each with a different political affiliation , such as Die Welt , Junge Welt , Neues Deutschland , and Die Tageszeitung ?
+        RETRIEVED Berlin has Germany's largest number of daily newspapers, with numerous local broadsheets (Berliner Morgenpost, Berliner Zeitung, Der Tagesspiegel), and three major tabloids, as well as national dailies of varying sizes, each with a different political affiliation, such as Die Welt, Junge Welt, Neues Deutschland, and Die Tageszeitung.
+        MATCH-YES
+ORIGINAL there is the DDR Museum about the life in the GDR
+    QUE What is the DDR Museum about the life in the GDR ?
+        RETRIEVED Opposite the Museum Island there is the DDR Museum about the life in the GDR.
+        MATCH-YES
+    QUE What is there in the GDR ?
+        RETRIEVED Opposite the Museum Island there is the DDR Museum about the life in the GDR.
+        MATCH-YES
+    QUE Is there the DDR Museum about the life in the GDR ?
+        RETRIEVED Opposite the Museum Island there is the DDR Museum about the life in the GDR.
+        MATCH-YES
+    QUE Is the spree the DDR Museum about the life in the GDR ?
+        RETRIEVED Opposite the Museum Island there is the DDR Museum about the life in the GDR.
+        MATCH-YES
+ORIGINAL 979 bridges cross 197 kilometers of innercity waterways , of roads run through Berlin , of which are motorways -LRB- `` Autobahn '' -RRB-
+    QUE How many bridges cross 197 kilometers of innerci
+        RETRIEVED 979 bridges cross 197 kilometers of innercity waterways,   of roads run through Berlin, of which   are motorways ("Autobahn").
+        MATCH-YES
+    QUE What cross 197 kilometers of innercity waterways , of roads run through Berlin , of which are motorways ("Autobahn") ?
+        RETRIEVED 979 bridges cross 197 kilometers of innercity waterways,   of roads run through Berlin, of which   are motorways ("Autobahn").
+        MATCH-YES
+    QUE How many kilometers do 979 bridges cross ?
+        RETRIEVED 979 bridges cross 197 kilometers of innercity waterways,   of roads run through Berlin, of which   are motorways ("Autobahn").
+        MATCH-YES
+    QUE 979 bridges cross how many kilometers of innercity waterways , of roads run through Berlin , of which are motorways ("Autobahn") ?
+        RETRIEVED 979 bridges cross 197 kilometers of innercity waterways,   of roads run through Berlin, of which   are motorways ("Autobahn").
+        MATCH-YES
+    QUE Where do 979 bridges cross ?
+        RETRIEVED 979 bridges cross 197 kilometers of innercity waterways,   of roads run through Berlin, of which   are motorways ("Autobahn").
+        MATCH-YES
+    QUE What do 979 bridges cross of innercity waterways , of roads run through Berlin , of which are motorways ("Autobahn") ?
+        RETRIEVED 979 bridges cross 197 kilometers of innercity waterways,   of roads run through Berlin, of which   are motorways ("Autobahn").
+        MATCH-YES
+    QUE Do 979 bridges cross 197 kilometers of innercity waterways , of roads run through Berlin , of which are motorways ("Autobahn") ?
+        RETRIEVED 979 bridges cross 197 kilometers of innercity waterways,   of roads run through Berlin, of which   are motorways ("Autobahn").
+        MATCH-YES
+    QUE Do the design of little red and green men on pedestrian crossing lights , the ampelmnnchen , cross 197 kilometers of innercity waterways , of roads run through Berlin , of which are motorways ("Autobahn") ?
+        RETRIEVED 979 bridges cross 197 kilometers of innercity waterways,   of roads run through Berlin, of which   are motorways ("Autobahn").
+        MATCH-YES
+ORIGINAL thousands of the city 's German Jews were imprisoned in the nearby Sachsenhausen concentration camp or , in early 1943 , were shipped to death camps , such as Auschwitz after the Kristallnacht pogrom in 1938
+    QUE What were imprisoned in the nearby Sachsenhausen concentration camp or , in early 1943 , were shipped to death camps , such as Auschwitz after the Kristallnacht pogrom in 1938?
+        RETRIEVED After the Kristallnacht pogrom in 1938, thousands of the city's German Jews were imprisoned in the nearby Sachsenhausen concentration camp or, in early 1943, were shipped to death camps, such as Auschwitz.
+        MATCH-YES
+    QUE When were thousands of the city 's German Jews imprisoned in the nearby Sachsenhausen concentration camp or , in early 1943 , were shipped to death camps , such as Auschwitz?
+        RETRIEVED After the Kristallnacht pogrom in 1938, thousands of the city's German Jews were imprisoned in the nearby Sachsenhausen concentration camp or, in early 1943, were shipped to death camps, such as Auschwitz.
+        MATCH-YES
+    QUE When were thousands of the city 's German Jews imprisoned after the Kristallnacht pogrom in 1938?
+        RETRIEVED After the Kristallnacht pogrom in 1938, thousands of the city's German Jews were imprisoned in the nearby Sachsenhausen concentration camp or, in early 1943, were shipped to death camps, such as Auschwitz.
+        MATCH-YES
+    QUE What were thousands of the city 's German Jews imprisoned in camp or , in early 1943 , were shipped to death camps , such as Auschwitz after the Kristallnacht pogrom in 1938?
+        RETRIEVED After the Kristallnacht pogrom in 1938, thousands of the city's German Jews were imprisoned in the nearby Sachsenhausen concentration camp or, in early 1943, were shipped to death camps, such as Auschwitz.
+        MATCH-YES
+    QUE Were thousands of the city 's German Jews imprisoned in the nearby Sachsenhausen concentration camp or , in early 1943 , were shipped to death camps , such as Auschwitz after the Kristallnacht pogrom in 1938?
+        RETRIEVED After the Kristallnacht pogrom in 1938, thousands of the city's German Jews were imprisoned in the nearby Sachsenhausen concentration camp or, in early 1943, were shipped to death camps, such as Auschwitz.
+        MATCH-YES
+    QUE Were many other immigrants imprisoned in the nearby Sachsenhausen concentration camp or , in early 1943 , were shipped to death camps , such as Auschwitz after the Kristallnacht pogrom in 1938?
+        RETRIEVED After the Kristallnacht pogrom in 1938, thousands of the city's German Jews were imprisoned in the nearby Sachsenhausen concentration camp or, in early 1943, were shipped to death camps, such as Auschwitz.
+        MATCH-YES
+    QUE What were imprisoned in the nearby Sachsenhausen concentration camp or , in early 1943 , were shipped to death camps , such as Auschwitz after the Kristallnacht pogrom in 1938?
+        RETRIEVED After the Kristallnacht pogrom in 1938, thousands of the city's German Jews were imprisoned in the nearby Sachsenhausen concentration camp or, in early 1943, were shipped to death camps, such as Auschwitz.
+        MATCH-YES
+    QUE When were thousands of the city 's German Jews imprisoned in the nearby Sachsenhausen concentration camp or , in early 1943 , were shipped to death camps , such as Auschwitz?
+        RETRIEVED After the Kristallnacht pogrom in 1938, thousands of the city's German Jews were imprisoned in the nearby Sachsenhausen concentration camp or, in early 1943, were shipped to death camps, such as Auschwitz.
+        MATCH-YES
+    QUE When were thousands of the city 's German Jews imprisoned after the Kristallnacht pogrom in 1938?
+        RETRIEVED After the Kristallnacht pogrom in 1938, thousands of the city's German Jews were imprisoned in the nearby Sachsenhausen concentration camp or, in early 1943, were shipped to death camps, such as Auschwitz.
+        MATCH-YES
+    QUE What were thousands of the city 's German Jews imprisoned in camp or , in early 1943 , were shipped to death camps , such as Auschwitz after the Kristallnacht pogrom in 1938?
+        RETRIEVED After the Kristallnacht pogrom in 1938, thousands of the city's German Jews were imprisoned in the nearby Sachsenhausen concentration camp or, in early 1943, were shipped to death camps, such as Auschwitz.
+        MATCH-YES
+    QUE Were thousands of the city 's German Jews imprisoned in the nearby Sachsenhausen concentration camp or , in early 1943 , were shipped to death camps , such as Auschwitz after the Kristallnacht pogrom in 1938?
+        RETRIEVED After the Kristallnacht pogrom in 1938, thousands of the city's German Jews were imprisoned in the nearby Sachsenhausen concentration camp or, in early 1943, were shipped to death camps, such as Auschwitz.
+        MATCH-YES
+    QUE Were other industries imprisoned in the nearby Sachsenhausen concentration camp or , in early 1943 , were shipped to death camps , such as Auschwitz after the Kristallnacht pogrom in 1938?
+        RETRIEVED After the Kristallnacht pogrom in 1938, thousands of the city's German Jews were imprisoned in the nearby Sachsenhausen concentration camp or, in early 1943, were shipped to death camps, such as Auschwitz.
+        MATCH-YES
+ORIGINAL the history of medicine has been widely influenced by scientists from Berlin
+    QUE What has been widely influenced by scientists from Berlin ?
+        RETRIEVED The history of medicine has been widely influenced by scientists from Berlin.
+        MATCH-YES
+    QUE Where has the history of medicine been ?
+        RETRIEVED The history of medicine has been widely influenced by scientists from Berlin.
+        MATCH-YES
+    QUE What has the history of medicine been from Berlin ?
+        RETRIEVED The history of medicine has been widely influenced by scientists from Berlin.
+        MATCH-YES
+    QUE Has the history of medicine been widely influenced by scientists from Berlin ?
+        RETRIEVED The history of medicine has been widely influenced by scientists from Berlin.
+        MATCH-YES
+    QUE Has the berliner dom , a protestant cathedral and the third church on this site , been widely influenced by scientists from Berlin ?
+        RETRIEVED The Berliner Dom, a Protestant cathedral and the third church on this site, is located on the Spree Island across from the site of the Berliner Stadtschloss and adjacent to the Lustgarten.
+        MATCH-NO
+ORIGINAL this monument , built to commemorate Prussia 's victories , was relocated 193839 from its previous position in front of the Reichstag
+    QUE What was relocated 193839 from its previous position in front of the Reichstag ?
+        RETRIEVED       UnicodeEncodeError
+    QUE Who was this monument , built to commemorate Prussia 's victories , relocated ?
+        RETRIEVED       UnicodeEncodeError
+    QUE What was this monument , built to commemorate Prussia 's victories , relocated in front of the Reichstag ?
+        RETRIEVED       UnicodeEncodeError
+    QUE Was this monument , built to commemorate Prussia 's victories , relocated 193839 from its previous position in front of the Reichstag ?
+        RETRIEVED       UnicodeEncodeError
+    QUE Was subsequent members of the hohenzollern family relocated 193839 from its previous position in front of the Reichstag ?
+        RETRIEVED       UnicodeEncodeError
+    QUE What was relocated 193839 from its previous position in front of the Reichstag ?
+        RETRIEVED       UnicodeEncodeError
+    QUE Who was this monument , built to commemorate Prussia 's victories , relocated ?
+        RETRIEVED       UnicodeEncodeError
+    QUE What was this monument , built to commemorate Prussia 's victories , relocated in front of the Reichstag ?
+        RETRIEVED       UnicodeEncodeError
+    QUE Was this monument , built to commemorate Prussia 's victories , relocated 193839 from its previous position in front of the Reichstag ?
+        RETRIEVED       UnicodeEncodeError
+    QUE Was the memorial to the murdered jews of europe , a holocaust memorial , relocated 193839 from its previous position in front of the Reichstag ?
+        RETRIEVED       UnicodeEncodeError
+ORIGINAL the FIVB World Tour has chosen an inner-city site near Alexanderplatz to present a beach volleyball Grand Slam every year
+    QUE What has chosen an inner-city site near Alexanderplatz to present a beach volleyball Grand Slam every year ?
+        RETRIEVED The FIVB World Tour has chosen an inner-city site near Alexanderplatz to present a beach volleyball Grand Slam every year.
+        MATCH-YES
+    QUE Where has the FIVB World Tour chosen ?
+        RETRIEVED The FIVB World Tour has chosen an inner-city site near Alexanderplatz to present a beach volleyball Grand Slam every year.
+        MATCH-YES
+    QUE What has the FIVB World Tour chosen Alexanderplatz to present a beach volleyball Grand Slam every year ?
+        RETRIEVED The FIVB World Tour has chosen an inner-city site near Alexanderplatz to present a beach volleyball Grand Slam every year.
+        MATCH-YES
+    QUE Has the FIVB World Tour chosen an inner-city site near Alexanderplatz to present a beach volleyball Grand Slam every year ?
+        RETRIEVED The FIVB World Tour has chosen an inner-city site near Alexanderplatz to present a beach volleyball Grand Slam every year.
+        MATCH-YES
+    QUE Has the berlinwarsaw urstromtal (ice age melt water flow) , between the low barnim plateau to the north and the teltow plateau to the south , chosen an inner-city site near Alexanderplatz to present a beach volleyball Grand Slam every year ?
+        RETRIEVED       UnicodeEncodeError
+ORIGINAL Berlin has established itself as a center of youth and popular culture in Europe
+    QUE What has established itself as a center of youth and popular culture in Europe ?
+        RETRIEVED Young Germans and international artists continue to settle in the city, and Berlin has established itself as a center of youth and popular culture in Europe.
+        MATCH-YES
+    QUE Where has Berlin established ?
+        RETRIEVED Berlin has established itself as the third most-visited city destination in the European Union.
+        MATCH-NO
+    QUE What has Berlin established of youth and popular culture in Europe ?
+        RETRIEVED Young Germans and international artists continue to settle in the city, and Berlin has established itself as a center of youth and popular culture in Europe.
+        MATCH-YES
+    QUE Has Berlin established itself as a center of youth and popular culture in Europe ?
+        RETRIEVED Young Germans and international artists continue to settle in the city, and Berlin has established itself as a center of youth and popular culture in Europe.
+        MATCH-YES
+    QUE Has the church established itself as a center of youth and popular culture in Europe ?
+        RETRIEVED Young Germans and international artists continue to settle in the city, and Berlin has established itself as a center of youth and popular culture in Europe.
+        MATCH-YES
+    QUE What has established itself as a center of youth and popular culture in Europe ?
+        RETRIEVED Young Germans and international artists continue to settle in the city, and Berlin has established itself as a center of youth and popular culture in Europe.
+        MATCH-YES
+    QUE Where has Berlin established ?
+        RETRIEVED Berlin has established itself as the third most-visited city destination in the European Union.
+        MATCH-NO
+    QUE What has Berlin established of youth and popular culture in Europe ?
+        RETRIEVED Young Germans and international artists continue to settle in the city, and Berlin has established itself as a center of youth and popular culture in Europe.
+        MATCH-YES
+    QUE Has Berlin established itself as a center of youth and popular culture in Europe ?
+        RETRIEVED Young Germans and international artists continue to settle in the city, and Berlin has established itself as a center of youth and popular culture in Europe.
+        MATCH-YES
+    QUE Has nazi rule established itself as a center of youth and popular culture in Europe ?
+        RETRIEVED Young Germans and international artists continue to settle in the city, and Berlin has established itself as a center of youth and popular culture in Europe.
+        MATCH-YES
+ORIGINAL a large crypt houses the remains of some of the earlier Prussian royal family
+    QUE What houses the remains of some of the earlier Prussian royal family ?
+        RETRIEVED A large crypt houses the remains of some of the earlier Prussian royal family.
+        MATCH-YES
+    QUE Does a large crypt house the remains of some of the earlier Prussian royal family ?
+        RETRIEVED A large crypt houses the remains of some of the earlier Prussian royal family.
+        MATCH-YES
+    QUE Does germany house the remains of some of the earlier Prussian royal family ?
+        RETRIEVED A large crypt houses the remains of some of the earlier Prussian royal family.
+        MATCH-YES
+    QUE What houses the remains of some of the earlier Prussian royal family ?
+        RETRIEVED A large crypt houses the remains of some of the earlier Prussian royal family.
+        MATCH-YES
+    QUE Does a large crypt house the remains of some of the earlier Prussian royal family ?
+        RETRIEVED A large crypt houses the remains of some of the earlier Prussian royal family.
+        MATCH-YES
+    QUE Does Elector Frederick house the remains of some of the earlier Prussian royal family ?
+        RETRIEVED A large crypt houses the remains of some of the earlier Prussian royal family.
+        MATCH-YES
+ORIGINAL Berlin has established itself as the third most-visited city destination in the European Union
+    QUE What has established itself as the third most-visited city destination in the European Union ?
+        RETRIEVED Berlin has established itself as the third most-visited city destination in the European Union.
+        MATCH-YES
+    QUE What has Berlin established the European Union ?
+        RETRIEVED Berlin has established itself as the third most-visited city destination in the European Union.
+        MATCH-YES
+    QUE Has Berlin established itself as the third most-visited city destination in the European Union ?
+        RETRIEVED Berlin has established itself as the third most-visited city destination in the European Union.
+        MATCH-YES
+    QUE Has annual precipitation established itself as the third most-visited city destination in the European Union ?
+        RETRIEVED Berlin has established itself as the third most-visited city destination in the European Union.
+        MATCH-YES
+    QUE What has established itself as the third most-visited city destination in the European Union ?
+        RETRIEVED Berlin has established itself as the third most-visited city destination in the European Union.
+        MATCH-YES
+    QUE What has Berlin established the European Union ?
+        RETRIEVED Berlin has established itself as the third most-visited city destination in the European Union.
+        MATCH-YES
+    QUE Has Berlin established itself as the third most-visited city destination in the European Union ?
+        RETRIEVED Berlin has established itself as the third most-visited city destination in the European Union.
+        MATCH-YES
+    QUE Has the settlement of spandau established itself as the third most-visited city destination in the European Union ?
+        RETRIEVED Berlin has established itself as the third most-visited city destination in the European Union.
+        MATCH-YES
+ORIGINAL Berlin 's population 18802007

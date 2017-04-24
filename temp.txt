@@ -1,0 +1,263 @@
+----------
+query: Is Berlin the capital city of Germany?
+qargs: Is Berlin the capit citi of Germani ?
+expected_types: GPE
+ sentence:The Berlin Philharmonic Orchestra is one of the preeminent orchestras in the world;  Is Rattle's Berlin honeymoon over?, The Guardian.
+----------
+doc1_nouns [u'berlin', u'capital', u'city', u'germany']
+doc2_nouns [u'berlin', u'philharmonic', u'orchestra', u'orchestra', u'world', u'rattle', u'berlin', u'honeymoon', u'guardian']
+----------
+doc1_names []
+----------
+==finalAnswer==   No
+----------
+query: Is Berlin the capital city of Germany?
+qargs: Is Berlin the capit citi of Germani ?
+expected_types: GPE
+ sentence:The Berlin Philharmonic Orchestra is one of the preeminent orchestras in the world;  Is Rattle's Berlin honeymoon over?, The Guardian.
+----------
+doc1_nouns [u'berlin', u'capital', u'city', u'germany']
+doc2_nouns [u'berlin', u'philharmonic', u'orchestra', u'orchestra', u'world', u'rattle', u'berlin', u'honeymoon', u'guardian']
+----------
+doc1_names []
+----------
+==finalAnswer==   No
+----------
+query: Is Berlin the largest city in Germany?
+qargs: Is Berlin the largest citi in Germani ?
+expected_types: GPE
+ sentence:The Berlin Philharmonic Orchestra is one of the preeminent orchestras in the world;  Is Rattle's Berlin honeymoon over?, The Guardian.
+----------
+doc1_nouns [u'berlin', u'city', u'germany']
+doc2_nouns [u'berlin', u'philharmonic', u'orchestra', u'orchestra', u'world', u'rattle', u'berlin', u'honeymoon', u'guardian']
+----------
+doc1_names []
+----------
+==finalAnswer==   No
+----------
+query: Is Berlin the largest city in Germany?
+qargs: Is Berlin the largest citi in Germani ?
+expected_types: GPE
+ sentence:The Berlin Philharmonic Orchestra is one of the preeminent orchestras in the world;  Is Rattle's Berlin honeymoon over?, The Guardian.
+----------
+doc1_nouns [u'berlin', u'city', u'germany']
+doc2_nouns [u'berlin', u'philharmonic', u'orchestra', u'orchestra', u'world', u'rattle', u'berlin', u'honeymoon', u'guardian']
+----------
+doc1_names []
+----------
+==finalAnswer==   No
+----------
+query: Is Schloss Charlottenburg the largest existing palace in Berlin?
+qargs: Is Schloss Charlottenburg the largest exist palac in Berlin ?
+expected_types: LOC
+ sentence:Schloss Charlottenburg is the largest existing palace in Berlin.
+----------
+doc1_nouns [u'palace', u'berlin']
+doc2_nouns [u'palace', u'berlin']
+----------
+doc1_names [[u'Schloss', u'Charlottenburg']]
+----------
+==finalAnswer==   Yes
+----------
+query: Is Schloss Charlottenburg the largest existing palace in Berlin?
+qargs: Is Schloss Charlottenburg the largest exist palac in Berlin ?
+expected_types: LOC
+ sentence:Schloss Charlottenburg is the largest existing palace in Berlin.
+----------
+doc1_nouns [u'palace', u'berlin']
+doc2_nouns [u'palace', u'berlin']
+----------
+doc1_names [[u'Schloss', u'Charlottenburg']]
+----------
+==finalAnswer==   Yes
+----------
+query: Which building is the site of the German parliament?
+qargs: Which build is the site of the German parliament ?
+expected_types: LOC
+ sentence:The Reichstag building is the site of the German parliament.
+==finalAnswer==   The Reichstag building is the site of the German parliament.
+----------
+query: Which building is the site of the German parliament?
+qargs: Which build is the site of the German parliament ?
+expected_types: LOC
+ sentence:The Reichstag building is the site of the German parliament.
+==finalAnswer==   The Reichstag building is the site of the German parliament.
+----------
+query: Which two sports events did the Olympiastadion host?
+qargs: Which two sport event did the Olympiastadion host ?
+expected_types: PERSON
+ sentence:Berlin has established a high profile reputation as a host city of international sporting events.
+==finalAnswer==   Berlin has established a high profile reputation as a host city of international sporting events.
+----------
+query: Which two sports events did the Olympiastadion host?
+qargs: Which two sport event did the Olympiastadion host ?
+expected_types: PERSON
+ sentence:Berlin has established a high profile reputation as a host city of international sporting events.
+==finalAnswer==   Berlin has established a high profile reputation as a host city of international sporting events.
+----------
+query: Where is the Berliner Dom located?
+qargs: Where is the Berlin Dom locat ?
+expected_types: GPE
+ sentence:The Berliner Dom, a Protestant cathedral and the third church on this site, is located on the Spree Island across from the site of the Berliner Stadtschloss and adjacent to the Lustgarten.
+NER token Passege: [(u'ORG', u'Berliner'), (u'NORP', u'Protestant'), (u'ORDINAL', u'third'), (u'LOC', u'the Spree Island'), (u'ORG', u'the Berliner Stadtschloss'), (u'PERSON', u'Lustgarten')]
+==finalAnswer==   the Spree Island
+----------
+query: Where is the Berliner Dom located?
+qargs: Where is the Berlin Dom locat ?
+expected_types: GPE
+ sentence:The Berliner Dom, a Protestant cathedral and the third church on this site, is located on the Spree Island across from the site of the Berliner Stadtschloss and adjacent to the Lustgarten.
+NER token Passege: [(u'ORG', u'Berliner'), (u'NORP', u'Protestant'), (u'ORDINAL', u'third'), (u'LOC', u'the Spree Island'), (u'ORG', u'the Berliner Stadtschloss'), (u'PERSON', u'Lustgarten')]
+==finalAnswer==   the Spree Island
+----------
+query: Which Berlin building did architect Norman Foster remodel in the 1990s?
+qargs: Which Berlin build did architect Norman Foster remodel in the 1990 ?
+expected_types: PERSON
+ sentence:The building was again remodeled by British architect Norman Foster in the 1990s and features a glass dome over the session area, which allows free public access to the parliamentary proceedings and magnificent views of the city.
+==finalAnswer==   The building was again remodeled by British architect Norman Foster in the 1990s and features a glass dome over the session area, which allows free public access to the parliamentary proceedings and magnificent views of the city.
+----------
+query: Which Berlin building did architect Norman Foster remodel in the 1990s?
+qargs: Which Berlin build did architect Norman Foster remodel in the 1990 ?
+expected_types: PERSON
+ sentence:The building was again remodeled by British architect Norman Foster in the 1990s and features a glass dome over the session area, which allows free public access to the parliamentary proceedings and magnificent views of the city.
+==finalAnswer==   The building was again remodeled by British architect Norman Foster in the 1990s and features a glass dome over the session area, which allows free public access to the parliamentary proceedings and magnificent views of the city.
+----------
+query: Why is Vattenfall shifting towards reliance on cleaner, renewable energy sources?
+qargs: Whi is Vattenfal shift toward relianc on cleaner , renew energi sourc ?
+expected_types: OTHER
+ sentence:Because burning lignite produces harmful emissions, Vattenfall has announced a commitment to shift towards reliance on cleaner, renewable energy sources.
+==finalAnswer==   Because burning lignite produces harmful emissions, Vattenfall has announced a commitment to shift towards reliance on cleaner, renewable energy sources.
+----------
+query: Why is Vattenfall shifting towards reliance on cleaner, renewable energy sources?
+qargs: Whi is Vattenfal shift toward relianc on cleaner , renew energi sourc ?
+expected_types: OTHER
+ sentence:Because burning lignite produces harmful emissions, Vattenfall has announced a commitment to shift towards reliance on cleaner, renewable energy sources.
+==finalAnswer==   Because burning lignite produces harmful emissions, Vattenfall has announced a commitment to shift towards reliance on cleaner, renewable energy sources.
+----------
+query: What are the names of the two zoos in Berlin?
+qargs: What are the name of the two zoo in Berlin ?
+expected_types: PERSON
+ sentence:Zoologischer Garten Berlin, the older of two zoos in the city, was founded in 1844, and presents the most diverse range of species in the world.
+==finalAnswer==   Zoologischer Garten Berlin, the older of two zoos in the city, was founded in 1844, and presents the most diverse range of species in the world.
+----------
+query: What are the names of the two zoos in Berlin?
+qargs: What are the name of the two zoo in Berlin ?
+expected_types: PERSON
+ sentence:Zoologischer Garten Berlin, the older of two zoos in the city, was founded in 1844, and presents the most diverse range of species in the world.
+==finalAnswer==   Zoologischer Garten Berlin, the older of two zoos in the city, was founded in 1844, and presents the most diverse range of species in the world.
+----------
+query: Is Berlin the headquarters of Springer?
+qargs: Is Berlin the headquart of Springer ?
+expected_types: LOC
+ sentence:The Berlin Philharmonic Orchestra is one of the preeminent orchestras in the world;  Is Rattle's Berlin honeymoon over?, The Guardian.
+----------
+doc1_nouns [u'berlin', u'headquarters']
+doc2_nouns [u'berlin', u'philharmonic', u'orchestra', u'orchestra', u'world', u'rattle', u'berlin', u'honeymoon', u'guardian']
+----------
+doc1_names [[u'Springer']]
+----------
+==finalAnswer==   No
+----------
+query: Is Berlin the headquarters of Springer?
+qargs: Is Berlin the headquart of Springer ?
+expected_types: LOC
+ sentence:The Berlin Philharmonic Orchestra is one of the preeminent orchestras in the world;  Is Rattle's Berlin honeymoon over?, The Guardian.
+----------
+doc1_nouns [u'berlin', u'headquarters']
+doc2_nouns [u'berlin', u'philharmonic', u'orchestra', u'orchestra', u'world', u'rattle', u'berlin', u'honeymoon', u'guardian']
+----------
+doc1_names [[u'Springer']]
+----------
+==finalAnswer==   No
+----------
+query: Does the Gendarmenmarkt border the French Cathedral?
+qargs: Doe the Gendarmenmarkt border the French Cathedr ?
+expected_types: OTHER
+ sentence:The Gendarmenmarkt, a neoclassical square in Berlin whose name dates back to the Napoleonic occupation of the city, is bordered by two similarly designed cathedrals, the French Cathedral with its observation platform and the German Cathedral.
+----------
+doc1_nouns [u'border', u'cathedral']
+doc2_nouns [u'square', u'berlin', u'name', u'occupation', u'city', u'cathedral', u'cathedral', u'observation', u'platform', u'cathedral']
+----------
+doc1_names [[u'Gendarmenmarkt']]
+----------
+==finalAnswer==   No
+----------
+query: Does the Gendarmenmarkt border the French Cathedral?
+qargs: Doe the Gendarmenmarkt border the French Cathedr ?
+expected_types: OTHER
+ sentence:The Gendarmenmarkt, a neoclassical square in Berlin whose name dates back to the Napoleonic occupation of the city, is bordered by two similarly designed cathedrals, the French Cathedral with its observation platform and the German Cathedral.
+----------
+doc1_nouns [u'border', u'cathedral']
+doc2_nouns [u'square', u'berlin', u'name', u'occupation', u'city', u'cathedral', u'cathedral', u'observation', u'platform', u'cathedral']
+----------
+doc1_names [[u'Gendarmenmarkt']]
+----------
+==finalAnswer==   No
+----------
+query: Is the Nauen plain north of Berlin?
+qargs: Is the Nauen plain north of Berlin ?
+expected_types: PERSON
+ sentence:The Berlin Philharmonic Orchestra is one of the preeminent orchestras in the world;  Is Rattle's Berlin honeymoon over?, The Guardian.
+----------
+doc1_nouns [u'nauen', u'north', u'berlin']
+doc2_nouns [u'berlin', u'philharmonic', u'orchestra', u'orchestra', u'world', u'rattle', u'berlin', u'honeymoon', u'guardian']
+----------
+doc1_names []
+----------
+==finalAnswer==   No
+----------
+query: Is the Nauen plain north of Berlin?
+qargs: Is the Nauen plain north of Berlin ?
+expected_types: PERSON
+ sentence:The Berlin Philharmonic Orchestra is one of the preeminent orchestras in the world;  Is Rattle's Berlin honeymoon over?, The Guardian.
+----------
+doc1_nouns [u'nauen', u'north', u'berlin']
+doc2_nouns [u'berlin', u'philharmonic', u'orchestra', u'orchestra', u'world', u'rattle', u'berlin', u'honeymoon', u'guardian']
+----------
+doc1_names []
+----------
+==finalAnswer==   No
+----------
+query: Where is the bust of Queen Nefertiti?
+qargs: Where is the bust of Queen Nefert ?
+expected_types: GPE
+ sentence:Subsequently, the Altes Museum (Old Museum) in the Lustgarten displaying the bust of Queen Nefertiti,  A 3,000-year-old smile, Expatica.Com.
+NER token Passege: [(u'ORG', u'the Altes Museum'), (u'PERSON', u'Lustgarten'), (u'PERSON', u'Queen Nefertiti'), (u'DATE', u'3,000-year-old'), (u'PERSON', u'Expatica'), (u'ORG', u'Com')]
+==finalAnswer==   Subsequently, the Altes Museum (Old Museum) in the Lustgarten displaying the bust of Queen Nefertiti,  A 3,000-year-old smile, Expatica.Com.
+----------
+query: Where is the bust of Queen Nefertiti?
+qargs: Where is the bust of Queen Nefert ?
+expected_types: GPE
+ sentence:Subsequently, the Altes Museum (Old Museum) in the Lustgarten displaying the bust of Queen Nefertiti,  A 3,000-year-old smile, Expatica.Com.
+NER token Passege: [(u'ORG', u'the Altes Museum'), (u'PERSON', u'Lustgarten'), (u'PERSON', u'Queen Nefertiti'), (u'DATE', u'3,000-year-old'), (u'PERSON', u'Expatica'), (u'ORG', u'Com')]
+==finalAnswer==   Subsequently, the Altes Museum (Old Museum) in the Lustgarten displaying the bust of Queen Nefertiti,  A 3,000-year-old smile, Expatica.Com.
+----------
+query: Where does the German President live?
+qargs: Where doe the German Presid live ?
+expected_types: GPE
+ sentence:Light snowfall mainly occurs from December through March, but snow cover does not usually remain for long.
+NER token Passege: [(u'DATE', u'December through March')]
+==finalAnswer==   Light snowfall mainly occurs from December through March, but snow cover does not usually remain for long.
+----------
+query: Where does the German President live?
+qargs: Where doe the German Presid live ?
+expected_types: GPE
+ sentence:Light snowfall mainly occurs from December through March, but snow cover does not usually remain for long.
+NER token Passege: [(u'DATE', u'December through March')]
+==finalAnswer==   Light snowfall mainly occurs from December through March, but snow cover does not usually remain for long.
+----------
+query: When did Berlin give up its status as a free Hanseatic city?
+qargs: When did Berlin give up it statu as a free Hanseat citi ?
+expected_types: DATE
+ sentence:In 1451 Berlin became the royal residence of the Brandenburg electors, and Berlin had to give up its status as a free Hanseatic city.
+NER token: [(u'DATE', u'1451'), (u'GPE', u'Berlin'), (u'GPE', u'Brandenburg'), (u'GPE', u'Berlin'), (u'GPE', u'Hanseatic city')]
+==finalAnswer==   1451
+----------
+query: When did Berlin give up its status as a free Hanseatic city?
+qargs: When did Berlin give up it statu as a free Hanseat citi ?
+expected_types: DATE
+ sentence:In 1451 Berlin became the royal residence of the Brandenburg electors, and Berlin had to give up its status as a free Hanseatic city.
+NER token: [(u'DATE', u'1451'), (u'GPE', u'Berlin'), (u'GPE', u'Brandenburg'), (u'GPE', u'Berlin'), (u'GPE', u'Hanseatic city')]
+==finalAnswer==   1451
+----------
+query: Which is the busiest airport in Berlin?
+qargs: Which is the busiest airport in Berlin ?

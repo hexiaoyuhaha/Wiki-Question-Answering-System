@@ -71,8 +71,8 @@ class SearchEngine:
         :return: the list of ranking tuple (sentence id, score)
         '''
         # stem the query. Remove the first token
-        qargs = [ps.stem(word) for word in wordpunct_tokenize(query)] # wordpunct_tokenize(query)
-        if qargs[0] in percent_map:
+        qargs = [ps.stem(word) for word in wordpunct_tokenize(query)]  # wordpunct_tokenize(query)
+        if qargs[0].lower() in percent_map:
             qargs = qargs[1:]
 
         result = defaultdict(float)
@@ -91,17 +91,18 @@ class SearchEngine:
                 if sentid not in result:
                     result[sentid] = 1.0
                 if sentid in sents:
+                    # tf = min(sents[sentid][1], 1)
+                    # result[sentid] *= (1 - self.myLambda) * tf + self.myLambda * mle
                     sent_len = sents[sentid][0]
-                    tf = min(sents[sentid][1], 2)
+                    tf = min(sents[sentid][1], 1)
                     result[sentid] *= (1 - self.myLambda) * (tf + self.myMu * mle) / (sent_len + self.myMu) + self.myLambda * mle
                 else:
+                    # result[sentid] = self.myLambda * mle
                     sent_len = len(tb(s.strip()).words)
-                    result[sentid] *= (1-self.myLambda) * (self.myMu * mle) / (sent_len + self.myMu) + self.myLambda * mle
+                    result[sentid] *= (1 - self.myLambda) * (self.myMu * mle) / (sent_len + self.myMu) + self.myLambda * mle
         for sentid, score in result.iteritems():
             result[sentid] = math.pow(score, 1.0 / len(qargs))
-
         return result
-
 
     def returnTopKResult(self, result, k):
         '''

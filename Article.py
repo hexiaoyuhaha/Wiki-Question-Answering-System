@@ -3,6 +3,7 @@ import nltk.data
 from nltk.stem import PorterStemmer
 from nltk.tokenize import sent_tokenize, word_tokenize
 from nltk.tokenize import wordpunct_tokenize
+import codecs
 
 ps = PorterStemmer()
 
@@ -36,7 +37,7 @@ class Article:
         #         data = "\n".join(paragraphs)
         #         self.rawLines = tokenizer.tokenize(data)
         if fileName.endswith('.txt'):
-            with open(fileName) as file:
+            with codecs.open(fileName, encoding='utf-8', errors='replace') as file:
                 self.filePath = fileName
                 self.title = file.readline()
                 lines = file.readlines()
@@ -44,7 +45,7 @@ class Article:
                 # doc = ' '.join(lines)
                 self.rawLines = []
                 for line in lines:
-                    self.rawLines += tokenizer.tokenize(line.decode('utf-8'))
+                    self.rawLines += tokenizer.tokenize(line)  # line.decode('utf-8')
 
             self.rawLines_stem = [' '.join([ps.stem(word) for word in wordpunct_tokenize(sentence)]) for sentence in self.rawLines]
 
@@ -69,6 +70,6 @@ class Article:
 
 if __name__ == '__main__':
     # article = Article("data/a1.htm")
-    article = Article("data/a1.txt")
+    article = Article("S10/article/Berlin.txt")
     print "=== Title ===\n", article.title
     article.showRawLines()
